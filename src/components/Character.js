@@ -33,10 +33,6 @@ const Character = (props) => {
                             ideals={props.character.ideals}
                             bonds={props.character.bonds}
                             flaws={props.character.flaws}/>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row columns={2}>
-            <Grid.Column>
               <CharacterAbilities abilities={props.character.abilities}/>
             </Grid.Column>
           </Grid.Row>
