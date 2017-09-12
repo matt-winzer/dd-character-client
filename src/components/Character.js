@@ -4,6 +4,7 @@ import { Container } from 'semantic-ui-react'
 import Spinner from './Spinner'
 import CharacterHeader from './CharacterHeader'
 import CharacterAttributes from './CharacterAttributes'
+import CharacterAbilities from './CharacterAbilities'
 
 
 const Character = (props) => {
@@ -14,15 +15,16 @@ const Character = (props) => {
                           level={props.character.level}
                           _class={props.character.class.name}
                           race={props.character.race}/>
-          <CharacterAttributes  background={props.character.background}
-                                alignment={props.character.alignment}
-                                age={props.character.age}
-                                sex={props.character.sex}
-                                height={props.character.height}
-                                weight={props.character.weight}
-                                hairColor={props.character.hair_color}
-                                eyeColor={props.character.eye_color}
-                                skinColor={props.character.skin_color}/>
+        <CharacterAttributes  background={props.character.background}
+                              alignment={props.character.alignment}
+                              age={props.character.age}
+                              sex={props.character.sex}
+                              height={props.character.height}
+                              weight={props.character.weight}
+                              hairColor={props.character.hair_color}
+                              eyeColor={props.character.eye_color}
+                              skinColor={props.character.skin_color}/>
+        <CharacterAbilities abilities={props.character.abilities}/>
       </Container>
     )
   }
