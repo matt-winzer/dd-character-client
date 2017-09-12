@@ -7,7 +7,7 @@ const CharacterHeader = (props) => (
     <Header.Content>
       {props.name}
       <Header.Subheader>
-        {props.race} {props._class}
+        Lvl {props.level} {props.race} {props._class}
       </Header.Subheader>
     </Header.Content>
   </Header>

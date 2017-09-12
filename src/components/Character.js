@@ -7,15 +7,13 @@ import CharacterAttributes from './CharacterAttributes'
 
 
 const Character = (props) => {
-
   if (props.character) {
     return (
-      <div className='main-content'>
+      <Container className='main-content'>
         <CharacterHeader  name={props.character.name}
                           level={props.character.level}
                           _class={props.character.class.name}
                           race={props.character.race}/>
-        <Container className='main-content' text>
           <CharacterAttributes  background={props.character.background}
                                 alignment={props.character.alignment}
                                 age={props.character.age}
@@ -25,11 +23,9 @@ const Character = (props) => {
                                 hairColor={props.character.hair_color}
                                 eyeColor={props.character.eye_color}
                                 skinColor={props.character.skin_color}/>
-        </Container>
-      </div>
+      </Container>
     )
   }
-
   return <Spinner />
 }
 
