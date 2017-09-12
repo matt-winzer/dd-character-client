@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Menu } from 'semantic-ui-react'
+import { Menu } from 'semantic-ui-react'
 
 export default class HeaderMenu extends Component {
   state = { activeItem: 'drageons', logged: false }
