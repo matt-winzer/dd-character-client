@@ -1,7 +1,7 @@
 import React from 'react'
 import { Table } from 'semantic-ui-react'
 
-const CharacterDemographic = (props) => (
+const Attributes = (props) => (
   <Table celled inverted color='blue'>
     <Table.Header>
       <Table.Row>
@@ -51,4 +51,4 @@ const CharacterDemographic = (props) => (
   </Table>
 )
 
-export default CharacterDemographic
+export default Attributes

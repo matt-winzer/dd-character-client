@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 
-import Character from './components/Character'
+import Character from './components/character/Character'
 import HeaderMenu from './components/HeaderMenu'
 
 class App extends Component {

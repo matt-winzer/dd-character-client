@@ -3,7 +3,7 @@ import { Table } from 'semantic-ui-react'
 
 import Ability from './Ability'
 
-const CharacterAbilities = (props) => {
+const Abilities = (props) => {
   const abilities = props.abilities.map(ability => {
           return <Ability key={ability.id}
                           name={ability.full_name}
@@ -28,4 +28,4 @@ const CharacterAbilities = (props) => {
   )
 }
 
-export default CharacterAbilities
+export default Abilities
