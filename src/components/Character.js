@@ -1,11 +1,11 @@
 import React from 'react';
-import { Container } from 'semantic-ui-react'
+import { Container, Grid } from 'semantic-ui-react'
 
 import Spinner from './Spinner'
 import CharacterHeader from './CharacterHeader'
 import CharacterAttributes from './CharacterAttributes'
 import CharacterAbilities from './CharacterAbilities'
-
+import Personality from './Personality'
 
 const Character = (props) => {
   if (props.character) {
@@ -15,16 +15,32 @@ const Character = (props) => {
                           level={props.character.level}
                           _class={props.character.class.name}
                           race={props.character.race}/>
-        <CharacterAttributes  background={props.character.background}
-                              alignment={props.character.alignment}
-                              age={props.character.age}
-                              sex={props.character.sex}
-                              height={props.character.height}
-                              weight={props.character.weight}
-                              hairColor={props.character.hair_color}
-                              eyeColor={props.character.eye_color}
-                              skinColor={props.character.skin_color}/>
-        <CharacterAbilities abilities={props.character.abilities}/>
+        <Grid>
+          <Grid.Row columns={2}>
+            <Grid.Column>
+              <CharacterAttributes  background={props.character.background}
+                                    alignment={props.character.alignment}
+                                    age={props.character.age}
+                                    sex={props.character.sex}
+                                    height={props.character.height}
+                                    weight={props.character.weight}
+                                    hairColor={props.character.hair_color}
+                                    eyeColor={props.character.eye_color}
+                                    skinColor={props.character.skin_color}/>
+            </Grid.Column>
+            <Grid.Column>
+              <Personality  traits={props.character.personality_traits}
+                            ideals={props.character.ideals}
+                            bonds={props.character.bonds}
+                            flaws={props.character.flaws}/>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row columns={2}>
+            <Grid.Column>
+              <CharacterAbilities abilities={props.character.abilities}/>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
       </Container>
     )
   }
