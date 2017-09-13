@@ -19,7 +19,8 @@
 }
 
 .main-content {
-  margin-top: 2em;
+  margin-top: 5em;
+  margin-bottom: 2em;
 }
 
 @keyframes App-logo-spin {

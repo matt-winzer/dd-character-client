@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Menu } from 'semantic-ui-react'
+import { Menu } from 'semantic-ui-react'
 
 export default class HeaderMenu extends Component {
   state = { activeItem: 'drageons', logged: false }
@@ -11,7 +11,7 @@ export default class HeaderMenu extends Component {
 
     if (this.state.logged) {
       return (
-      <Menu size='huge' inverted stackable>
+      <Menu size='huge' inverted stackable fixed>
         <Menu.Item name='drageons' active={activeItem === 'drageons'} onClick={this.handleItemClick} />
         <Menu.Item name='messages' active={activeItem === 'messages'} onClick={this.handleItemClick} />
 
@@ -22,7 +22,7 @@ export default class HeaderMenu extends Component {
       )
     }
     return (
-      <Menu size='huge' inverted stackable>
+      <Menu size='huge' inverted stackable fixed='top'>
         <Menu.Item name='drageons' active={activeItem === 'drageons'} onClick={this.handleItemClick} />
         <Menu.Item name='messages' active={activeItem === 'messages'} onClick={this.handleItemClick} />
 
