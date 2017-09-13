@@ -10,12 +10,20 @@ const Inventory = (props) => {
   if (props.character) {
     return (
       <Container className='main-content'>
-        <CharacterHeader name={props.character.name}
-                level={props.character.level}
-                _class={props.character.class.name}
-                race={props.character.race}/>
-        <Weapons weapons={props.character.weapons}/>
-        <Items items={props.character.items}/>
+        <CharacterHeader  name={props.character.name}
+                          level={props.character.level}
+                          _class={props.character.class.name}
+                          race={props.character.race}/>
+        <Grid stackable>
+          <Grid.Row columns={3}>
+            <Grid.Column>
+              <Weapons weapons={props.character.weapons}/>
+            </Grid.Column>
+            <Grid.Column>
+              <Items items={props.character.items}/>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
       </Container>
     )
   }

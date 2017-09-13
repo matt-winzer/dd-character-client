@@ -5,12 +5,12 @@ import Skill from './Skill'
 
 const Skills = (props) => {
   const skills = props.skills.map(skill => {
-          return <Skill key={skill.id}
-                        name={skill.name}
-                        description={skill.description}
-                        value={skill.value}
-                        modifier={skill.modifier}/>
-        })
+    return <Skill key={skill.id}
+                  name={skill.name}
+                  description={skill.description}
+                  value={skill.value}
+                  modifier={skill.modifier}/>
+  })
 
   return (
     <Table celled selectable inverted color='blue'>

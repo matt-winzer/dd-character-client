@@ -7,8 +7,7 @@ const Ability = (props) => {
                       <Table.Cell>{props.name}</Table.Cell>
                       <Table.Cell textAlign='center'>{props.value}</Table.Cell>
                       <Table.Cell textAlign='center'>{props.modifier}</Table.Cell>
-                    </Table.Row>}
-                    basic size='small' closeIcon closeOnDocumentClick='true'>
+                    </Table.Row>} basic size='small' closeIcon>
       <Header as='h1' icon='thumbs outline up' content={props.name} />
       <Modal.Content>
         <h3>{props.description}</h3>

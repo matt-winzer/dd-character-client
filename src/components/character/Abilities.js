@@ -5,11 +5,11 @@ import Ability from './Ability'
 
 const Abilities = (props) => {
   const abilities = props.abilities.map(ability => {
-          return <Ability key={ability.id}
-                          name={ability.full_name}
-                          value={ability.value}
-                          modifier={ability.modifier}/>
-        })
+    return <Ability key={ability.id}
+                    name={ability.full_name}
+                    value={ability.value}
+                    modifier={ability.modifier}/>
+  })
 
   return (
     <Table celled selectable inverted color='green'>

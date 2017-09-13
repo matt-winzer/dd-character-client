@@ -8,8 +8,7 @@ const Item = (props) => {
                       <Table.Cell>{props.category}</Table.Cell>
                       <Table.Cell textAlign='center'>{props.costValue} {props.costUnit}</Table.Cell>
                       <Table.Cell textAlign='center'>{props.weight}</Table.Cell>
-                    </Table.Row>}
-                    basic size='small' closeIcon closeOnDocumentClick='true'>
+                    </Table.Row>} basic size='small' closeIcon>
       <Header as='h1' icon='thumbs outline up' content={props.name} />
       <Modal.Content>
         <h3>{props.description}</h3>

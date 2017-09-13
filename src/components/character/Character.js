@@ -13,11 +13,11 @@ const Character = (props) => {
   if (props.character) {
     return (
       <Container className='main-content'>
-        <CharacterHeader name={props.character.name}
-                level={props.character.level}
-                _class={props.character.class.name}
-                race={props.character.race}/>
-        <Grid>
+        <CharacterHeader  name={props.character.name}
+                          level={props.character.level}
+                          _class={props.character.class.name}
+                          race={props.character.race}/>
+        <Grid stackable>
           <Grid.Row columns={3}>
             <Grid.Column>
               <Skills skills={props.character.skills}/>
@@ -31,15 +31,15 @@ const Character = (props) => {
                             ideals={props.character.ideals}
                             bonds={props.character.bonds}
                             flaws={props.character.flaws}/>
-                            <Attributes background={props.character.background}
-                                        alignment={props.character.alignment}
-                                        age={props.character.age}
-                                        sex={props.character.sex}
-                                        height={props.character.height}
-                                        weight={props.character.weight}
-                                        hairColor={props.character.hair_color}
-                                        eyeColor={props.character.eye_color}
-                                        skinColor={props.character.skin_color}/>
+              <Attributes background={props.character.background}
+                          alignment={props.character.alignment}
+                          age={props.character.age}
+                          sex={props.character.sex}
+                          height={props.character.height}
+                          weight={props.character.weight}
+                          hairColor={props.character.hair_color}
+                          eyeColor={props.character.eye_color}
+                          skinColor={props.character.skin_color}/>
             </Grid.Column>
           </Grid.Row>
         </Grid>

@@ -6,8 +6,7 @@ const Proficiency = (props) => {
     <Modal trigger={<Table.Row>
                       <Table.Cell>{props.name}</Table.Cell>
                       <Table.Cell>{props.type}</Table.Cell>
-                    </Table.Row>}
-                    basic size='small' closeIcon closeOnDocumentClick='true'>
+                    </Table.Row>} basic size='small' closeIcon>
       <Header as='h1' icon='thumbs outline up' content={props.name} />
       <Modal.Content>
         <h3>Hello</h3>
