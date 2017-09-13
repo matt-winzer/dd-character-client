@@ -4,6 +4,7 @@ import { Container, Grid } from 'semantic-ui-react'
 import Spinner from '../Spinner'
 import CharacterHeader from '../character/CharacterHeader'
 import Weapons from './Weapons'
+import Items from './Items'
 
 const Inventory = (props) => {
   if (props.character) {
@@ -14,6 +15,7 @@ const Inventory = (props) => {
                 _class={props.character.class.name}
                 race={props.character.race}/>
         <Weapons weapons={props.character.weapons}/>
+        <Items items={props.character.items}/>
       </Container>
     )
   }
