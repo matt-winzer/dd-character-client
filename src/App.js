@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Character from './components/character/Character'
-import HeaderMenu from './components/HeaderMenu'
+import Navbar from './components/Navbar'
+import Inventory from './components/inventory/Inventory'
 
 class App extends Component {
   state = {characters: null}
@@ -21,12 +22,13 @@ class App extends Component {
     if (this.state.characters) {
       return (
         <div>
-          <HeaderMenu />
+          <Navbar />
           <Character character={this.state.characters[0]}/>
+          <Inventory character={this.state.characters[0]}/>
         </div>
       )
     }
-    return <HeaderMenu />
+    return <Navbar />
   }
 }
 

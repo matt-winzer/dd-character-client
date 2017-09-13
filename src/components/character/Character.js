@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Grid } from 'semantic-ui-react'
 
 import Spinner from '../Spinner'
-import Header from './Header'
+import CharacterHeader from './CharacterHeader'
 import Attributes from './Attributes'
 import Abilities from './Abilities'
 import Personality from './Personality'
@@ -13,7 +13,7 @@ const Character = (props) => {
   if (props.character) {
     return (
       <Container className='main-content'>
-        <Header name={props.character.name}
+        <CharacterHeader name={props.character.name}
                 level={props.character.level}
                 _class={props.character.class.name}
                 race={props.character.race}/>
@@ -40,12 +40,6 @@ const Character = (props) => {
                                         hairColor={props.character.hair_color}
                                         eyeColor={props.character.eye_color}
                                         skinColor={props.character.skin_color}/>
-            </Grid.Column>
-
-          </Grid.Row>
-          <Grid.Row columns={3}>
-            <Grid.Column>
-
             </Grid.Column>
           </Grid.Row>
         </Grid>
