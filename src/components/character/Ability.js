@@ -1,13 +1,19 @@
 import React from 'react'
-import { Table } from 'semantic-ui-react'
+import { Table, Modal, Icon, Header } from 'semantic-ui-react'
 
 const Ability = (props) => {
   return (
-    <Table.Row>
-      <Table.Cell>{props.name}</Table.Cell>
-      <Table.Cell>{props.value}</Table.Cell>
-      <Table.Cell>{props.modifier}</Table.Cell>
-    </Table.Row>
+    <Modal trigger={<Table.Row>
+                      <Table.Cell>{props.name}</Table.Cell>
+                      <Table.Cell textAlign='center'>{props.value}</Table.Cell>
+                      <Table.Cell textAlign='center'>{props.modifier}</Table.Cell>
+                    </Table.Row>}
+                    basic size='small' closeIcon closeOnDocumentClick='true'>
+      <Header as='h1' icon='thumbs outline up' content={props.name} />
+      <Modal.Content>
+        <h3>{props.description}</h3>
+      </Modal.Content>
+    </Modal>
   )
 }
 

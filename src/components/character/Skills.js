@@ -18,8 +18,8 @@ const Skills = (props) => {
         <Table.Row>
           <Table.HeaderCell>Skill</Table.HeaderCell>
 
-          <Table.HeaderCell>Value</Table.HeaderCell>
-          <Table.HeaderCell>Modifier</Table.HeaderCell>
+          <Table.HeaderCell textAlign='center'>Value</Table.HeaderCell>
+          <Table.HeaderCell textAlign='center'>Modifier</Table.HeaderCell>
         </Table.Row>
       </Table.Header>
 
