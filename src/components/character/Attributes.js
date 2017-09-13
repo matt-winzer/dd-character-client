@@ -2,7 +2,7 @@ import React from 'react'
 import { Table } from 'semantic-ui-react'
 
 const Attributes = (props) => (
-  <Table celled inverted color='blue'>
+  <Table celled inverted color='violet'>
     <Table.Header>
       <Table.Row>
         <Table.HeaderCell>Attribute</Table.HeaderCell>

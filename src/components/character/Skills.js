@@ -6,18 +6,17 @@ import Skill from './Skill'
 const Skills = (props) => {
   const skills = props.skills.map(skill => {
           return <Skill key={skill.id}
-                          name={skill.name}
-                          description={skill.description}
-                          value={skill.value}
-                          modifier={skill.modifier}/>
+                        name={skill.name}
+                        description={skill.description}
+                        value={skill.value}
+                        modifier={skill.modifier}/>
         })
 
   return (
-    <Table celled selectable inverted color='orange'>
+    <Table celled selectable inverted color='blue'>
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell>Skill</Table.HeaderCell>
-
           <Table.HeaderCell textAlign='center'>Value</Table.HeaderCell>
           <Table.HeaderCell textAlign='center'>Modifier</Table.HeaderCell>
         </Table.Row>

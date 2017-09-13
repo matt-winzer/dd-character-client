@@ -7,6 +7,7 @@ import Attributes from './Attributes'
 import Abilities from './Abilities'
 import Personality from './Personality'
 import Skills from './Skills'
+import Proficiencies from './Proficiencies'
 
 const Character = (props) => {
   if (props.character) {
@@ -23,7 +24,7 @@ const Character = (props) => {
             </Grid.Column>
             <Grid.Column>
               <Abilities abilities={props.character.abilities}/>
-
+              <Proficiencies proficiencies={props.character.proficiencies}/>
             </Grid.Column>
             <Grid.Column>
               <Personality  traits={props.character.personality_traits}
