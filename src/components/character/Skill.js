@@ -10,7 +10,7 @@ const Skill = (props) => {
                       <Table.Cell>{props.modifier}</Table.Cell>
                     </Table.Row>}
                     basic size='small' closeIcon closeOnDocumentClick='true'>
-      <Header icon='archive' content={props.name} />
+      <Header as='h1' icon='thumbs outline up' content={props.name} />
       <Modal.Content>
         <h3>{props.description}</h3>
       </Modal.Content>
