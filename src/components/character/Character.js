@@ -16,7 +16,7 @@ const Character = (props) => {
                 _class={props.character.class.name}
                 race={props.character.race}/>
         <Grid>
-          <Grid.Row columns={2}>
+          <Grid.Row columns={3}>
             <Grid.Column>
               <Attributes background={props.character.background}
                           alignment={props.character.alignment}
@@ -29,12 +29,16 @@ const Character = (props) => {
                           skinColor={props.character.skin_color}/>
             </Grid.Column>
             <Grid.Column>
+              <Abilities abilities={props.character.abilities}/>
+            </Grid.Column>
+            <Grid.Column>
               <Personality  traits={props.character.personality_traits}
                             ideals={props.character.ideals}
                             bonds={props.character.bonds}
                             flaws={props.character.flaws}/>
-              <Abilities abilities={props.character.abilities}/>
+
             </Grid.Column>
+
           </Grid.Row>
         </Grid>
       </Container>
