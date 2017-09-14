@@ -11,7 +11,7 @@ const Proficiencies = (props) => {
   })
 
   return (
-    <Table celled selectable inverted color='green'>
+    <Table celled selectable unstackable inverted color='green'>
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell>Proficiency</Table.HeaderCell>

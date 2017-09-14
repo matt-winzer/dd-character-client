@@ -14,7 +14,7 @@ const Items = (props) => {
         })
 
   return (
-    <Table celled selectable inverted color='orange'>
+    <Table celled selectable unstackable inverted color='orange'>
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell>Item</Table.HeaderCell>

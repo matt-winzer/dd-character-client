@@ -2,7 +2,7 @@ import React from 'react'
 import { Table } from 'semantic-ui-react'
 
 const Personality = (props) => (
-  <Table celled inverted color='violet'>
+  <Table celled unstackable inverted color='violet'>
     <Table.Header>
       <Table.Row>
         <Table.HeaderCell>Personality</Table.HeaderCell>

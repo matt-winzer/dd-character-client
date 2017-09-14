@@ -13,7 +13,7 @@ const Skills = (props) => {
   })
 
   return (
-    <Table celled selectable inverted color='blue'>
+    <Table celled selectable unstackable inverted color='blue'>
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell>Skill</Table.HeaderCell>
