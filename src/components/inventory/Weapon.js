@@ -9,7 +9,7 @@ const Ability = (props) => {
                       <Table.Cell textAlign='center'>{props.range}</Table.Cell>
                       <Table.Cell textAlign='center'>{props.damageDiceCount} D-{props.damageDiceValue}</Table.Cell>
                     </Table.Row>} basic size='small' closeIcon>
-      <Header as='h1' icon='thumbs outline up' content={props.name} />
+      <Header as='h1' icon='military' content={props.name} />
       <Modal.Content>
         <h3>{props.description}</h3>
       </Modal.Content>
