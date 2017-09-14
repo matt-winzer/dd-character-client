@@ -16,13 +16,15 @@ const Inventory = (props) => {
                           _class={props.character.class.name}
                           race={props.character.race}/>
         <Grid stackable>
-          <Grid.Row columns={3}>
+          <Grid.Row columns={2}>
             <Grid.Column>
               <Weapons weapons={props.character.weapons}/>
             </Grid.Column>
             <Grid.Column>
               <Items items={props.character.items}/>
             </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
             <Grid.Column>
               <Armors armors={props.character.armors}/>
             </Grid.Column>
