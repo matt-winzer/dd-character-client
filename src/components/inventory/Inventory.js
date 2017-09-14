@@ -5,6 +5,7 @@ import Spinner from '../Spinner'
 import CharacterHeader from '../character/CharacterHeader'
 import Weapons from './Weapons'
 import Items from './Items'
+import Armors from './Armors'
 
 const Inventory = (props) => {
   if (props.character) {
@@ -21,6 +22,9 @@ const Inventory = (props) => {
             </Grid.Column>
             <Grid.Column>
               <Items items={props.character.items}/>
+            </Grid.Column>
+            <Grid.Column>
+              <Armors armors={props.character.armors}/>
             </Grid.Column>
           </Grid.Row>
         </Grid>
