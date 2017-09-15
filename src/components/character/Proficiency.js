@@ -7,7 +7,7 @@ const Proficiency = (props) => {
                       <Table.Cell>{props.name}</Table.Cell>
                       <Table.Cell>{props.type}</Table.Cell>
                     </Table.Row>} basic size='small' closeIcon>
-      <Header as='h1' icon='thumbs outline up' content={props.name} />
+      <Header as='h1' icon='user plus' content={props.name} />
       <Modal.Content>
         <h3>Hello</h3>
       </Modal.Content>
