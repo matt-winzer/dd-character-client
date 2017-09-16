@@ -18,12 +18,18 @@ class App extends Component {
     })
   }
 
+  createModalDescription(descriptionArray) {
+    return descriptionArray.map(description => {
+      return <h3 key={description.substring(0, 5)}>{description}</h3>
+    })
+  }
+
   render() {
     if (this.state.characters) {
       return (
         <div>
           <Navbar />
-          <Character character={this.state.characters[0]}/>
+          <Character character={this.state.characters[0]} createModalDescription={this.createModalDescription}/>
           <Inventory character={this.state.characters[0]}/>
         </div>
       )

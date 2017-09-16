@@ -8,7 +8,9 @@ const Abilities = (props) => {
     return <Ability key={ability.id}
                     name={ability.full_name}
                     value={ability.value}
-                    modifier={ability.modifier}/>
+                    modifier={ability.modifier}
+                    url={ability.url}
+                    createModalDescription={props.createModalDescription}/>
   })
 
   return (
