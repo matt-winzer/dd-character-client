@@ -1,27 +1,31 @@
 import React, { Component } from 'react'
-import { Table, Modal, Icon, Header } from 'semantic-ui-react'
-import Spinner from '../Spinner'
+import { Table, Modal, Label, Header } from 'semantic-ui-react'
 
 class Ability extends Component {
   constructor(props) {
-  super(props)
-  this.state = {description: null}
+    super(props)
+    this.state = {description: null}
   }
 
   componentDidMount() {
-    console.log('compnentDidMount');
     fetch(this.props.url)
       .then(response => response.json())
       .then(ability => {
         const description = this.props.createModalDescription(ability.desc)
+        const skills = this.getAbilitySkills(ability.skills)
         this.setState({
-          description: description
+          description: description,
+          skills: skills
         })
-        console.log(this.state);
       })
-
   }
 
+  getAbilitySkills(skillsArray) {
+    return skillsArray.map(skill => {
+      return <Label color='blue' key={skill.name}>{skill.name}</Label>
+    })
+  }
+  
   render() {
     return (
       <Modal trigger={<Table.Row>
@@ -32,6 +36,8 @@ class Ability extends Component {
         <Header as='h1' icon='universal access' content={this.props.name} />
         <Modal.Content>
           {this.state.description || 'Content Unavailable'}
+          <br></br>
+          {this.state.skills || ''}
         </Modal.Content>
       </Modal>
     )

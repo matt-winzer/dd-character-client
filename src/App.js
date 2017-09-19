@@ -20,7 +20,7 @@ class App extends Component {
 
   createModalDescription(descriptionArray) {
     return descriptionArray.map(description => {
-      return <h3 key={description.substring(0, 5)}>{description}</h3>
+      return <h3 key={description.substring(15, 20)}>{description}</h3>
     })
   }
 
