@@ -1,5 +1,5 @@
 import React from 'react'
-import { Table, Modal, Icon, Header } from 'semantic-ui-react'
+import { Table, Modal, Header } from 'semantic-ui-react'
 
 const Item = (props) => {
   return (
