@@ -30,6 +30,3 @@ const Skills = (props) => {
 }
 
 export default Skills
-
-
-// <Table.HeaderCell>Description</Table.HeaderCell>

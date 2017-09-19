@@ -17,5 +17,3 @@ const Skill = (props) => {
 }
 
 export default Skill
-
-      // <Table.Cell>{props.description}</Table.Cell>

@@ -4,12 +4,14 @@ import { Table, Modal, Header } from 'semantic-ui-react'
 const Armor = (props) => {
   let stealth = 'False'
   let dexBonus = 'False'
+
   if (props.stealth) {
     stealth = 'True'
   }
   if (props.dexBonus) {
     dexBonus = 'True'
   }
+
   return (
     <Modal trigger={<Table.Row>
                       <Table.Cell>{props.name}</Table.Cell>
