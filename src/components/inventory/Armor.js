@@ -109,15 +109,13 @@ class Armor extends Component {
         </Header>
         <Modal.Content>
           <Table className='modal-table' compact={editMode ? true : false} celled striped unstackable color='brown'>
-            {this.state.description &&
               <Table.Header className='modal-table-header' fullWidth>
                 <Table.Row>
                   <Table.HeaderCell colSpan='2'>
-                    <p>{this.state.description}</p>
+                    <p>{this.state.description || 'No description available.'}</p>
                   </Table.HeaderCell>
                 </Table.Row>
               </Table.Header>
-            }
             <Table.Body>
               <Table.Row>
                 <Table.Cell><strong>Name</strong></Table.Cell>
