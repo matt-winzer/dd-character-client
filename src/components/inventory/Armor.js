@@ -46,14 +46,17 @@ class Armor extends Component {
   }
 
   toggleEditMode = () => {
+    let editMode = !this.state.editMode
     this.setState({
       ...this.state,
-      editMode: false
+      editMode: editMode
     })
+    console.log(this.state);
   }
 
   render() {
-    if (!this.state.editMode) {
+      const editMode = this.state.editMode
+
       return (
         <Modal trigger={<Table.Row>
                           <Table.Cell>{this.state.name}</Table.Cell>
@@ -62,6 +65,7 @@ class Armor extends Component {
                         </Table.Row>} size='tiny' closeIcon>
           <Header as='h1' icon='shield' content={'Armor - ' + this.state.name} />
           <Modal.Content>
+            <Button icon={editMode ? 'save' : 'edit'} content={editMode ? 'Save' : 'Edit'} color={editMode ? 'red' : 'green'} inverted onClick={this.toggleEditMode} />
             <Table celled striped unstackable color='brown'>
               <Table.Header>
                 <Table.HeaderCell>Property</Table.HeaderCell>
@@ -78,7 +82,7 @@ class Armor extends Component {
                 </Table.Row>
                 <Table.Row>
                   <Table.Cell><strong>AC Base</strong></Table.Cell>
-                  <Table.Cell>{this.state.acBase}</Table.Cell>
+                  {!editMode ? <Table.Cell>{this.state.acBase}</Table.Cell> : <Table.Cell textAlign='center'><Input fluid name='acBase' placeholder={this.state.acBase} value={this.state.acBase} onChange={this.handleChange}/></Table.Cell>}
                 </Table.Row>
                 <Table.Row>
                   <Table.Cell><strong>AC Max Bonus</strong></Table.Cell>
@@ -109,20 +113,9 @@ class Armor extends Component {
           </Modal.Content>
         </Modal>
       )
-    }
 
-    return (
-      <Table.Row>
-        <Table.Cell>{this.state.name}</Table.Cell>
-        <Table.Cell>{this.state.acBase}</Table.Cell>
-        <Table.Cell textAlign='center'>{this.state.costValue} {this.state.costUnit}</Table.Cell>
-      </Table.Row>
 
-    )
   }
 }
 
 export default Armor
-
-// <Table.Cell><Button onClick={this.toggleEditMode}>Edit</Button></Table.Cell>
-// <Table.Cell textAlign='center'><Input fluid name='acBase' placeholder={this.state.acBase} value={this.state.acBase} onChange={this.handleChange}/></Table.Cell>
