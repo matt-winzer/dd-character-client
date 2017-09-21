@@ -21,12 +21,12 @@ const Inventory = (props) => {
               <Weapons weapons={props.character.weapons}/>
             </Grid.Column>
             <Grid.Column>
-              <Items items={props.character.items}/>
+              <Armors armors={props.character.armors}/>
             </Grid.Column>
           </Grid.Row>
-          <Grid.Row columns={2}>
+          <Grid.Row columns={1}>
             <Grid.Column>
-              <Armors armors={props.character.armors}/>
+              <Items items={props.character.items}/>
             </Grid.Column>
           </Grid.Row>
         </Grid>

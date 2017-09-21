@@ -6,7 +6,9 @@ import Armor from './Armor'
 const Armors = (props) => {
   const armors = props.armors.map(armor => {
           return <Armor key={armor.id}
+                        id={armor.id}
                         name={armor.name}
+                        description={armor.description}
                         category={armor.category}
                         weight={armor.weight}
                         costValue={armor.cost_value}

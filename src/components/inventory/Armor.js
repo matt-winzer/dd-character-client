@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Table, Modal, Header, Button, Icon, Input } from 'semantic-ui-react'
+import { Table, Modal, Header, Button, Icon, Input, Divider, Segment } from 'semantic-ui-react'
 
 class Armor extends Component {
   constructor(props) {
@@ -9,14 +9,15 @@ class Armor extends Component {
       stealth: 'False',
       dexBonus: 'False',
       name: props.name,
+      description: props.description,
       category: props.category,
       acBase: props.acBase,
       costValue: props.costValue,
       costUnit: props.costUnit,
       weight: props.weight,
       acMax: props.acMax,
-      minStrength: props.minStrength
-
+      minStrength: props.minStrength,
+      baseUrl: 'http://localhost:3000/armor'
     }
   }
 
@@ -54,6 +55,42 @@ class Armor extends Component {
     console.log(this.state);
   }
 
+  saveEdits = (id) => {
+    const editMode = !this.state.editMode
+    const url = `${this.state.baseUrl}/${id}`
+    const options = {
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: this.state.name,
+        category: this.state.category,
+        ac_base: this.state.acBase,
+        ac_dex_bonus: this.state.dexBonus,
+        ac_max_bonus: this.state.acMax,
+        strength_min: this.state.minStrength,
+        stealth_disadvantage: this.state.stealth,
+        weight: this.state.weight,
+        cost_value: this.state.costValue,
+        cost_unit: this.state.costUnit,
+      })
+    }
+
+    fetch(url, options)
+      .then(response => response.json())
+      .then(response => {
+        this.setState({
+          ...this.state,
+          editMode: editMode
+        })
+      })
+      .catch(err => {
+      console.log(err)
+    })
+  }
+
   render() {
     const editMode = this.state.editMode
 
@@ -68,14 +105,19 @@ class Armor extends Component {
           {this.state.name}
         </Header>
         <Header as='h1' floated='right'>
-          <Button icon={editMode ? 'save' : 'edit'} content={editMode ? 'Save' : 'Edit'} color={editMode ? 'green' : 'grey'} onClick={this.toggleEditMode}/>
+          {!editMode ? <Button className='editButton' icon='edit' color='grey' content='Edit' onClick={this.toggleEditMode}/> : <Button className='editButton' icon='save' color='green' content='Save' onClick={this.saveEdits.bind(null, this.props.id)}/>}
         </Header>
         <Modal.Content>
-          <Table  celled striped unstackable color='brown'>
-            <Table.Header>
-              <Table.HeaderCell>Property</Table.HeaderCell>
-              <Table.HeaderCell>Value</Table.HeaderCell>
-            </Table.Header>
+          <Table className='modal-table' compact={editMode ? true : false} celled striped unstackable color='brown'>
+            {this.state.description &&
+              <Table.Header className='modal-table-header' fullWidth>
+                <Table.Row>
+                  <Table.HeaderCell colSpan='2'>
+                    <p>{this.state.description}</p>
+                  </Table.HeaderCell>
+                </Table.Row>
+              </Table.Header>
+            }
             <Table.Body>
               <Table.Row>
                 <Table.Cell><strong>Name</strong></Table.Cell>

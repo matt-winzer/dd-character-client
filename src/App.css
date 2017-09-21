@@ -23,6 +23,19 @@
   margin-bottom: 2em;
 }
 
+.editButton {
+  margin-right: 1.5em !important;
+}
+
+.modal-table {
+  /*margin-top: 5.5em !important;*/
+}
+
+.modal-table-header p {
+  /*margin-top: 5.5em !important;*/
+  font-weight: normal !important;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
