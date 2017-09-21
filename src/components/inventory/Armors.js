@@ -23,12 +23,8 @@ const Armors = (props) => {
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell>Armor</Table.HeaderCell>
-          <Table.HeaderCell>Category</Table.HeaderCell>
           <Table.HeaderCell textAlign='center'>AC Base</Table.HeaderCell>
-          <Table.HeaderCell textAlign='center'>Dex Bonus</Table.HeaderCell>
-          <Table.HeaderCell textAlign='center'>Stealth Disadvantage</Table.HeaderCell>
           <Table.HeaderCell textAlign='center'>Cost</Table.HeaderCell>
-          <Table.HeaderCell textAlign='center'>Weight</Table.HeaderCell>
         </Table.Row>
       </Table.Header>
 
