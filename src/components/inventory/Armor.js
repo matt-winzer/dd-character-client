@@ -15,7 +15,7 @@ class Armor extends Component {
       costUnit: props.costUnit,
       weight: props.weight,
       acMax: props.acMax,
-      minHeight: props.minHeight
+      minStrength: props.minStrength
 
     }
   }
@@ -63,14 +63,53 @@ class Armor extends Component {
                           <Table.Cell textAlign='center'>{this.state.stealth}</Table.Cell>
                           <Table.Cell textAlign='center'>{this.state.costValue} {this.state.costUnit}</Table.Cell>
                           <Table.Cell textAlign='center'>{this.state.weight}</Table.Cell>
-                        </Table.Row>} basic size='small' closeIcon>
-          <Header as='h1' icon='shield' content={this.state.name} />
+                        </Table.Row>} size='tiny' closeIcon>
+          <Header as='h1' icon='shield' content={'Armor - ' + this.state.name} />
           <Modal.Content>
-            <h4>Category: {this.state.category}</h4>
-            <h4>Dexterity Bonus: {this.state.dexBonus}</h4>
-            <h4>Stealth Disadvantage: {this.state.stealth}</h4>
-            <h4>AC Max Bonus: {this.state.acMax || 'N/A'}</h4>
-            <h4>Minimum Strength Required: {this.state.minHeight}</h4>
+            <Table celled striped unstackable color='brown'>
+              <Table.Header>
+                <Table.HeaderCell>Property</Table.HeaderCell>
+                <Table.HeaderCell>Value</Table.HeaderCell>
+              </Table.Header>
+              <Table.Body>
+                <Table.Row>
+                  <Table.Cell><strong>Name</strong></Table.Cell>
+                  <Table.Cell>{this.state.name}</Table.Cell>
+                </Table.Row>
+                <Table.Row>
+                  <Table.Cell><strong>Category</strong></Table.Cell>
+                  <Table.Cell>{this.state.category}</Table.Cell>
+                </Table.Row>
+                <Table.Row>
+                  <Table.Cell><strong>AC Base</strong></Table.Cell>
+                  <Table.Cell>{this.state.acBase}</Table.Cell>
+                </Table.Row>
+                <Table.Row>
+                  <Table.Cell><strong>AC Max Bonus</strong></Table.Cell>
+                  <Table.Cell>{this.state.acMax || 'N/A'}</Table.Cell>
+                </Table.Row>
+                <Table.Row>
+                  <Table.Cell><strong>Dex Bonus</strong></Table.Cell>
+                  <Table.Cell>{this.state.dexBonus}</Table.Cell>
+                </Table.Row>
+                <Table.Row>
+                <Table.Cell><strong>Stealth Disadvantage</strong></Table.Cell>
+                  <Table.Cell>{this.state.stealth}</Table.Cell>
+                </Table.Row>
+                <Table.Row>
+                  <Table.Cell><strong>Strength Minimum</strong></Table.Cell>
+                  <Table.Cell>{this.state.minStrength}</Table.Cell>
+                </Table.Row>
+                <Table.Row>
+                  <Table.Cell><strong>Cost</strong></Table.Cell>
+                  <Table.Cell>{this.state.costValue} {this.state.costUnit}</Table.Cell>
+                </Table.Row>
+                <Table.Row>
+                  <Table.Cell><strong>Weight</strong></Table.Cell>
+                  <Table.Cell>{this.state.weight}</Table.Cell>
+                </Table.Row>
+              </Table.Body>
+            </Table>
           </Modal.Content>
         </Modal>
       )
