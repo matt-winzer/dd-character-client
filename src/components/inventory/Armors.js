@@ -14,7 +14,8 @@ const Armors = (props) => {
                         acBase={armor.ac_base}
                         acMax={armor.ac_max_bonus}
                         dexBonus={armor.ac_dex_bonus}
-                        stealth={armor.stealth_disadvantage}/>
+                        stealth={armor.stealth_disadvantage}
+                        minHeight={armor.strength_min}/>
         })
 
   return (
