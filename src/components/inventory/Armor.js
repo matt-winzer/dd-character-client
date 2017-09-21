@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Table, Modal, Header, Button, Icon, Input, Divider, Segment } from 'semantic-ui-react'
+import { Table, Modal, Header, Button, Icon, Input } from 'semantic-ui-react'
 
 class Armor extends Component {
   constructor(props) {
