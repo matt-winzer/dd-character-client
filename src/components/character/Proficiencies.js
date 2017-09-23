@@ -5,13 +5,13 @@ import Proficiency from './Proficiency'
 
 const Proficiencies = (props) => {
   const proficiencies = props.proficiencies.map(proficiency => {
-          return <Proficiency key={proficiency.id}
-                              name={proficiency.name}
-                              type={proficiency.type}/>
-        })
+    return <Proficiency key={proficiency.id}
+                        name={proficiency.name}
+                        type={proficiency.type}/>
+  })
 
   return (
-    <Table celled selectable inverted color='green'>
+    <Table celled selectable unstackable inverted color='green'>
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell>Proficiency</Table.HeaderCell>

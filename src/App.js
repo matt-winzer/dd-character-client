@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Character from './components/character/Character'
-import HeaderMenu from './components/HeaderMenu'
+import Navbar from './components/Navbar'
+import Inventory from './components/inventory/Inventory'
 
 class App extends Component {
   state = {characters: null}
@@ -17,16 +18,23 @@ class App extends Component {
     })
   }
 
+  createModalDescription(descriptionArray) {
+    return descriptionArray.map(description => {
+      return <h3 key={description.substring(15, 20)}>{description}</h3>
+    })
+  }
+
   render() {
     if (this.state.characters) {
       return (
         <div>
-          <HeaderMenu />
-          <Character character={this.state.characters[0]}/>
+          <Navbar />
+          <Character character={this.state.characters[0]} createModalDescription={this.createModalDescription}/>
+          <Inventory character={this.state.characters[0]}/>
         </div>
       )
     }
-    return <HeaderMenu />
+    return <Navbar />
   }
 }
 

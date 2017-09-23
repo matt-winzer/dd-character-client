@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
 
-export default class HeaderMenu extends Component {
+export default class Navbar extends Component {
   state = { activeItem: 'drageons', logged: false }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
