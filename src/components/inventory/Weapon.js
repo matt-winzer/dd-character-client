@@ -114,7 +114,7 @@ class Weapon extends Component {
               </Table.Row>
               <Table.Row>
                 <Table.Cell><strong>Damage</strong></Table.Cell>
-                {!editMode ? <Table.Cell>{this.state.damageDiceCount} D{this.state.damageDiceValue}</Table.Cell> : <Table.Cell textAlign='center'><Input fluid className='input-edit' name='damage_dice_value' placeholder={this.state.damageDiceCount} value={this.state.damageDiceCount} onChange={this.handleChange}/><Input fluid className='input-edit' name='damage_dice_count' placeholder={this.state.damageDiceValue} value={this.state.damageDiceValue} onChange={this.handleChange}/></Table.Cell>}
+                {!editMode ? <Table.Cell>{this.state.damageDiceCount} D{this.state.damageDiceValue}</Table.Cell> : <Table.Cell textAlign='center'><Input fluid className='input-edit' name='damageDiceCount' placeholder={this.state.damageDiceCount} value={this.state.damageDiceCount} onChange={this.handleChange}/><Input fluid className='input-edit' name='damageDiceValue' placeholder={this.state.damageDiceValue} value={this.state.damageDiceValue} onChange={this.handleChange}/></Table.Cell>}
 
               </Table.Row>
               <Table.Row>
