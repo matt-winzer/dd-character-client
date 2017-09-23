@@ -100,7 +100,7 @@ class Armor extends Component {
                         <Table.Cell>{this.state.name}</Table.Cell>
                         <Table.Cell textAlign='center'>{this.state.acBase}</Table.Cell>
                         <Table.Cell textAlign='center'>{this.state.costValue} {this.state.costUnit}</Table.Cell>
-                      </Table.Row>} size='tiny' closeIcon>
+                      </Table.Row>} size='small' closeIcon>
         <Header as='h1' floated='left'>
           <Icon name='shield'/>
           {this.state.name}

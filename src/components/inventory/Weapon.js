@@ -82,7 +82,7 @@ class Weapon extends Component {
                         <Table.Cell>{this.state.name}</Table.Cell>
                         <Table.Cell textAlign='center'>{this.state.range}</Table.Cell>
                         <Table.Cell textAlign='center'>{this.state.damageDiceCount} D{this.state.damageDiceValue}</Table.Cell>
-                      </Table.Row>} size='tiny' closeIcon>
+                      </Table.Row>} size='small' closeIcon>
         <Header as='h1' floated='left'>
           <Icon name='first aid'/>
           {this.state.name}
@@ -95,7 +95,7 @@ class Weapon extends Component {
               <Table.Header className='modal-table-header' fullWidth>
                 <Table.Row>
                   <Table.HeaderCell colSpan='2'>
-                  {!editMode ? <p>{this.state.description || 'No description available.'}</p> : <Form><TextArea className='input-edit' name='description' value={this.state.description} onChange={this.handleChange}/></Form>}
+                    {!editMode ? <p>{this.state.description || 'No description available.'}</p> : <Form><TextArea className='input-edit' name='description' value={this.state.description} onChange={this.handleChange}/></Form>}
                   </Table.HeaderCell>
                 </Table.Row>
               </Table.Header>

@@ -76,7 +76,7 @@ class Item extends Component {
                         <Table.Cell textAlign='center'>{this.state.category}</Table.Cell>
                         <Table.Cell textAlign='center'>{this.state.weight}</Table.Cell>
                         <Table.Cell textAlign='center'>{this.state.costValue} {this.state.costUnit}</Table.Cell>
-                      </Table.Row>} size='tiny' closeIcon>
+                      </Table.Row>} size='small' closeIcon>
         <Header as='h1' floated='left'>
           <Icon name='first aid'/>
           {this.state.name}
