@@ -84,7 +84,7 @@ class Weapon extends Component {
                         <Table.Cell textAlign='center'>{this.state.damageDiceCount} D{this.state.damageDiceValue}</Table.Cell>
                       </Table.Row>} size='small' closeIcon>
         <Header as='h1' floated='left'>
-          <Icon name='first aid'/>
+          <Icon name='configure'/>
           {this.state.name}
         </Header>
         <Header as='h1' floated='right'>
@@ -102,7 +102,7 @@ class Weapon extends Component {
             <Table.Body>
               <Table.Row>
                 <Table.Cell><strong>Name</strong></Table.Cell>
-                {!editMode ? <Table.Cell>{this.state.name}</Table.Cell> : <Table.Cell textAlign='center'><Input fluid className='input-edit' name='name' placeholder={this.state.name} value={this.state.name} onChange={this.handleChange}/></Table.Cell>}
+                {!editMode ? <Table.Cell width={8}>{this.state.name}</Table.Cell> : <Table.Cell width={8} textAlign='center'><Input fluid className='input-edit' name='name' placeholder={this.state.name} value={this.state.name} onChange={this.handleChange}/></Table.Cell>}
               </Table.Row>
               <Table.Row>
                 <Table.Cell><strong>Category</strong></Table.Cell>
@@ -110,7 +110,12 @@ class Weapon extends Component {
               </Table.Row>
               <Table.Row>
                 <Table.Cell><strong>Damage Type</strong></Table.Cell>
-                {!editMode ? <Table.Cell>{this.state.damageType}</Table.Cell> : <Table.Cell textAlign='center'><Input fluid className='input-edit' name='damageType' placeholder={this.state.damageType} value={this.state.damageType} onChange={this.handleChange}/></Table.Cell>}
+                <Table.Cell>{this.state.damageType}</Table.Cell>
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell><strong>Damage</strong></Table.Cell>
+                {!editMode ? <Table.Cell>{this.state.damageDiceCount} D{this.state.damageDiceValue}</Table.Cell> : <Table.Cell textAlign='center'><Input fluid className='input-edit' name='damage_dice_value' placeholder={this.state.damageDiceCount} value={this.state.damageDiceCount} onChange={this.handleChange}/><Input fluid className='input-edit' name='damage_dice_count' placeholder={this.state.damageDiceValue} value={this.state.damageDiceValue} onChange={this.handleChange}/></Table.Cell>}
+
               </Table.Row>
               <Table.Row>
                 <Table.Cell><strong>Range</strong></Table.Cell>

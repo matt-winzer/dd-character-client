@@ -120,39 +120,39 @@ class Armor extends Component {
             <Table.Body>
               <Table.Row>
                 <Table.Cell><strong>Name</strong></Table.Cell>
-                {!editMode ? <Table.Cell>{this.state.name}</Table.Cell> : <Table.Cell textAlign='center'><Input className='input-edit' fluid icon='edit' name='name' placeholder={this.state.name} value={this.state.name} onChange={this.handleChange}/></Table.Cell>}
+                {!editMode ? <Table.Cell width={8}>{this.state.name}</Table.Cell> : <Table.Cell width={8}textAlign='right'><Input fluid className='input-edit' name='name' placeholder={this.state.name} value={this.state.name} onChange={this.handleChange}/></Table.Cell>}
               </Table.Row>
               <Table.Row>
                 <Table.Cell><strong>Category</strong></Table.Cell>
-                {!editMode ? <Table.Cell>{this.state.category}</Table.Cell> : <Table.Cell textAlign='center'><Input className='input-edit' fluid icon='edit' name='category' placeholder={this.state.category} value={this.state.category} onChange={this.handleChange}/></Table.Cell>}
+                {!editMode ? <Table.Cell>{this.state.category}</Table.Cell> : <Table.Cell textAlign='right'><Input fluid className='input-edit' name='category' placeholder={this.state.category} value={this.state.category} onChange={this.handleChange}/></Table.Cell>}
               </Table.Row>
               <Table.Row>
                 <Table.Cell><strong>AC Base</strong></Table.Cell>
-                {!editMode ? <Table.Cell>{this.state.acBase}</Table.Cell> : <Table.Cell textAlign='center'><Input className='input-edit' fluid icon='edit' name='acBase' placeholder={this.state.acBase} value={this.state.acBase} onChange={this.handleChange}/></Table.Cell>}
+                {!editMode ? <Table.Cell>{this.state.acBase}</Table.Cell> : <Table.Cell textAlign='right'><Input fluid className='input-edit' name='acBase' placeholder={this.state.acBase} value={this.state.acBase} onChange={this.handleChange}/></Table.Cell>}
               </Table.Row>
               <Table.Row>
                 <Table.Cell><strong>AC Max Bonus</strong></Table.Cell>
-                {!editMode ? <Table.Cell>{this.state.acMax}</Table.Cell> : <Table.Cell textAlign='center'><Input className='input-edit' fluid icon='edit' name='acMax' placeholder={this.state.acMax} value={this.state.acMax} onChange={this.handleChange}/></Table.Cell>}
+                {!editMode ? <Table.Cell>{this.state.acMax}</Table.Cell> : <Table.Cell textAlign='right'><Input fluid className='input-edit' name='acMax' placeholder={this.state.acMax} value={this.state.acMax} onChange={this.handleChange}/></Table.Cell>}
               </Table.Row>
               <Table.Row>
                 <Table.Cell><strong>Dex Bonus</strong></Table.Cell>
-                {!editMode ? <Table.Cell>{this.state.dexBonus}</Table.Cell> : <Table.Cell textAlign='center'><Input className='input-edit' fluid icon='edit' name='dexBonus' placeholder={this.state.dexBonus} value={this.state.dexBonus} onChange={this.handleChange}/></Table.Cell>}
+                {!editMode ? <Table.Cell>{this.state.dexBonus}</Table.Cell> : <Table.Cell textAlign='right'><Input fluid className='input-edit' name='dexBonus' placeholder={this.state.dexBonus} value={this.state.dexBonus} onChange={this.handleChange}/></Table.Cell>}
               </Table.Row>
               <Table.Row>
               <Table.Cell><strong>Stealth Disadvantage</strong></Table.Cell>
-              {!editMode ? <Table.Cell>{this.state.stealth}</Table.Cell> : <Table.Cell textAlign='center'><Input className='input-edit' fluid icon='edit' name='stealth' placeholder={this.state.stealth} value={this.state.stealth} onChange={this.handleChange}/></Table.Cell>}
+              {!editMode ? <Table.Cell>{this.state.stealth}</Table.Cell> : <Table.Cell textAlign='right'><Input fluid className='input-edit' name='stealth' placeholder={this.state.stealth} value={this.state.stealth} onChange={this.handleChange}/></Table.Cell>}
               </Table.Row>
               <Table.Row>
                 <Table.Cell><strong>Strength Minimum</strong></Table.Cell>
-                {!editMode ? <Table.Cell>{this.state.minStrength}</Table.Cell> : <Table.Cell textAlign='center'><Input className='input-edit' fluid icon='edit' name='minStrength' placeholder={this.state.minStrength} value={this.state.minStrength} onChange={this.handleChange}/></Table.Cell>}
+                {!editMode ? <Table.Cell>{this.state.minStrength}</Table.Cell> : <Table.Cell textAlign='right'><Input fluid className='input-edit' name='minStrength' placeholder={this.state.minStrength} value={this.state.minStrength} onChange={this.handleChange}/></Table.Cell>}
               </Table.Row>
               <Table.Row>
                 <Table.Cell><strong>Cost</strong></Table.Cell>
-                {!editMode ? <Table.Cell>{this.state.costValue} {this.state.costUnit}</Table.Cell> : <Table.Cell textAlign='center'><Input className='input-edit' fluid icon='edit' name='costValue' placeholder={this.state.costValue} value={this.state.costValue} onChange={this.handleChange}/><Input className='input-edit' fluid icon='edit' name='costUnit' placeholder={this.state.costUnit} value={this.state.costUnit} onChange={this.handleChange}/></Table.Cell>}
+                {!editMode ? <Table.Cell>{this.state.costValue} {this.state.costUnit}</Table.Cell> : <Table.Cell textAlign='right'><Input fluid className='input-edit' name='costValue' placeholder={this.state.costValue} value={this.state.costValue} onChange={this.handleChange}/><Input fluid className='input-edit' name='costUnit' placeholder={this.state.costUnit} value={this.state.costUnit} onChange={this.handleChange}/></Table.Cell>}
               </Table.Row>
               <Table.Row>
                 <Table.Cell><strong>Weight</strong></Table.Cell>
-                {!editMode ? <Table.Cell>{this.state.weight}</Table.Cell> : <Table.Cell textAlign='center'><Input className='input-edit' fluid icon='edit' name='weight' placeholder={this.state.weight} value={this.state.weight} onChange={this.handleChange}/></Table.Cell>}
+                {!editMode ? <Table.Cell>{this.state.weight}</Table.Cell> : <Table.Cell textAlign='center'><Input fluid className='input-edit' name='weight' placeholder={this.state.weight} value={this.state.weight} onChange={this.handleChange}/></Table.Cell>}
               </Table.Row>
             </Table.Body>
           </Table>

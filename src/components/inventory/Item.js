@@ -96,7 +96,7 @@ class Item extends Component {
             <Table.Body>
               <Table.Row>
                 <Table.Cell><strong>Name</strong></Table.Cell>
-                {!editMode ? <Table.Cell>{this.state.name}</Table.Cell> : <Table.Cell textAlign='center'><Input fluid className='input-edit' name='name' placeholder={this.state.name} value={this.state.name} onChange={this.handleChange}/></Table.Cell>}
+                {!editMode ? <Table.Cell width={8} >{this.state.name}</Table.Cell> : <Table.Cell width={8} textAlign='center'><Input fluid className='input-edit' name='name' placeholder={this.state.name} value={this.state.name} onChange={this.handleChange}/></Table.Cell>}
               </Table.Row>
               <Table.Row>
                 <Table.Cell><strong>Category</strong></Table.Cell>
