@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Table, Modal, Header, Button, Icon, Input } from 'semantic-ui-react'
+import { Table, Modal, Header, Button, Icon, Input, Form, TextArea } from 'semantic-ui-react'
 
 class Armor extends Component {
   constructor(props) {
@@ -48,11 +48,11 @@ class Armor extends Component {
 
   toggleEditMode = () => {
     let editMode = !this.state.editMode
+
     this.setState({
       ...this.state,
       editMode: editMode
     })
-    console.log(this.state);
   }
 
   saveEdits = (id) => {
@@ -67,6 +67,7 @@ class Armor extends Component {
       body: JSON.stringify({
         name: this.state.name,
         category: this.state.category,
+        description: this.state.description,
         ac_base: this.state.acBase,
         ac_dex_bonus: this.state.dexBonus,
         ac_max_bonus: this.state.acMax,
@@ -112,7 +113,7 @@ class Armor extends Component {
               <Table.Header className='modal-table-header' fullWidth>
                 <Table.Row>
                   <Table.HeaderCell colSpan='2'>
-                    <p>{this.state.description || 'No description available.'}</p>
+                    {!editMode ? <p>{this.state.description || 'No description available.'}</p> : <Form><TextArea className='input-edit' name='description' value={this.state.description} onChange={this.handleChange}/></Form>}
                   </Table.HeaderCell>
                 </Table.Row>
               </Table.Header>

@@ -36,7 +36,7 @@
   font-weight: normal !important;
 }
 
-.input-edit input {
+.input-edit, .input-edit input {
   background-color: lightyellow !important;
 }
 

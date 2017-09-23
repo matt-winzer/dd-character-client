@@ -9,6 +9,7 @@ const Items = (props) => {
                   id={item.id}
                   name={item.name}
                   category={item.category}
+                  description={item.description}
                   weight={item.weight}
                   costValue={item.cost_value}
                   costUnit={item.cost_unit}/>
