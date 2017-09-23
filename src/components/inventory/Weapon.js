@@ -110,7 +110,8 @@ class Weapon extends Component {
               </Table.Row>
               <Table.Row>
                 <Table.Cell><strong>Damage Type</strong></Table.Cell>
-                <Table.Cell>{this.state.damageType}</Table.Cell>
+                {!editMode ? <Table.Cell>{this.state.damageType}</Table.Cell> : <Table.Cell textAlign='center'><Input fluid disabled className='input-edit' name='damageType' placeholder={this.state.damageType} value={this.state.damageType} onChange={this.handleChange}/></Table.Cell>}
+
               </Table.Row>
               <Table.Row>
                 <Table.Cell><strong>Damage</strong></Table.Cell>
