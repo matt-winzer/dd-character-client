@@ -26,6 +26,9 @@
 .editButton {
   margin-right: 1.5em !important;
 }
+.edit-button-small {
+  margin: 0;
+}
 
 .modal-table {
   /*margin-top: 5.5em !important;*/
@@ -38,6 +41,12 @@
 
 .input-edit, .input-edit input {
   background-color: lightyellow !important;
+}
+
+.table-header-edit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @keyframes App-logo-spin {
