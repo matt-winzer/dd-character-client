@@ -4,7 +4,6 @@ import { Table } from 'semantic-ui-react'
 import Skill from './Skill'
 
 const Skills = (props) => {
-  console.log(props);
   const skills = props.skills.map(skill => {
     return <Skill key={skill.id}
                   id={skill.id}

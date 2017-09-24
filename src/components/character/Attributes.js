@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Table, Button, Input, TextArea } from 'semantic-ui-react'
-
+import { Table, Button, Input } from 'semantic-ui-react'
 
 class Attributes extends Component {
   constructor(props) {

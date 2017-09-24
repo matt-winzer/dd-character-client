@@ -68,7 +68,7 @@ class Ability extends Component {
         modifier: this.state.modifier
       })
     }
-    console.log(options);
+
     fetch(url, options)
       .then(response => response.json())
       .then(response => {
