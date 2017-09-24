@@ -20,7 +20,8 @@ const Character = (props) => {
         <Grid stackable>
           <Grid.Row columns={3}>
             <Grid.Column>
-              <Skills skills={props.character.skills}/>
+              <Skills   id={props.character.id}
+                        skills={props.character.skills}/>
             </Grid.Column>
             <Grid.Column>
               <Abilities  id={props.character.id}
