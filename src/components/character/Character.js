@@ -28,7 +28,8 @@ const Character = (props) => {
               <Proficiencies proficiencies={props.character.proficiencies}/>
             </Grid.Column>
             <Grid.Column>
-              <Personality  traits={props.character.personality_traits}
+              <Personality  id={props.character.id}
+                            traits={props.character.personality_traits}
                             ideals={props.character.ideals}
                             bonds={props.character.bonds}
                             flaws={props.character.flaws}/>
