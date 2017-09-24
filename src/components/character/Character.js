@@ -23,7 +23,8 @@ const Character = (props) => {
               <Skills skills={props.character.skills}/>
             </Grid.Column>
             <Grid.Column>
-              <Abilities  abilities={props.character.abilities}
+              <Abilities  id={props.character.id}
+                          abilities={props.character.abilities}
                           createModalDescription={props.createModalDescription}/>
               <Proficiencies proficiencies={props.character.proficiencies}/>
             </Grid.Column>

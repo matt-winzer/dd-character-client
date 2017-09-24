@@ -6,6 +6,8 @@ import Ability from './Ability'
 const Abilities = (props) => {
   const abilities = props.abilities.map(ability => {
     return <Ability key={ability.id}
+                    id={ability.id}
+                    characterId={props.id}
                     name={ability.full_name}
                     value={ability.value}
                     modifier={ability.modifier}
