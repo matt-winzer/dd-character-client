@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Table, Modal, Header, Button, Icon, Input, Form, TextArea, Label } from 'semantic-ui-react'
+import { Table, Button, Form, TextArea } from 'semantic-ui-react'
 
 
 class Personality extends Component {
