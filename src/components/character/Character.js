@@ -32,7 +32,8 @@ const Character = (props) => {
                             ideals={props.character.ideals}
                             bonds={props.character.bonds}
                             flaws={props.character.flaws}/>
-              <Attributes background={props.character.background}
+              <Attributes id={props.character.id}
+                          background={props.character.background}
                           alignment={props.character.alignment}
                           age={props.character.age}
                           sex={props.character.sex}

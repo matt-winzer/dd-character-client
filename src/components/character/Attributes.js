@@ -16,7 +16,7 @@ class Attributes extends Component {
       hairColor: props.hairColor,
       eyeColor: props.eyeColor,
       skinColor: props.skinColor,
-      baseUrl: 'http://localhost:3000/attribute'
+      baseUrl: 'http://localhost:3000/character'
     }
   }
 
@@ -49,12 +49,15 @@ class Attributes extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        name: this.state.name,
-        category: this.state.category,
-        description: this.state.description,
+        background: this.state.background,
+        alignment: this.state.alignment,
+        age: this.state.age,
+        sex: this.state.sex,
+        height: this.state.height,
         weight: this.state.weight,
-        cost_value: this.state.costValue,
-        cost_unit: this.state.costUnit,
+        hair_color: this.state.hairColor,
+        eye_color: this.state.eyeColor,
+        skin_color: this.state.skinColor,
       })
     }
 
@@ -79,7 +82,7 @@ class Attributes extends Component {
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Attribute</Table.HeaderCell>
-            <Table.HeaderCell className='table-header-edit'>Value{!editMode ? <Button className='edit-button-small' icon='edit' color='grey' onClick={this.toggleEditMode}/> : <Button className='edit-button-small' icon='save' color='green' onClick={this.saveEdits.bind(null, this.props.id)}/>}</Table.HeaderCell>
+            <Table.HeaderCell className='table-header-edit'>Value{!editMode ? <Button size='small' className='edit-button-small' icon='edit' color='grey' onClick={this.toggleEditMode}/> : <Button size='small' className='edit-button-small' icon='save' color='green' onClick={this.saveEdits.bind(null, this.props.id)}/>}</Table.HeaderCell>
 
           </Table.Row>
         </Table.Header>
@@ -87,39 +90,39 @@ class Attributes extends Component {
         <Table.Body>
           <Table.Row>
             <Table.Cell>Background</Table.Cell>
-            <Table.Cell>{this.state.background}</Table.Cell>
+            {!editMode ? <Table.Cell width={8} >{this.state.background}</Table.Cell> : <Table.Cell width={8} textAlign='center'><Input fluid className='input-edit' name='background' placeholder={this.state.background} value={this.state.background} onChange={this.handleChange}/></Table.Cell>}
           </Table.Row>
           <Table.Row>
             <Table.Cell>Alignment</Table.Cell>
-            <Table.Cell>{this.state.alignment}</Table.Cell>
+            {!editMode ? <Table.Cell width={8} >{this.state.alignment}</Table.Cell> : <Table.Cell width={8} textAlign='center'><Input fluid className='input-edit' name='alignment' placeholder={this.state.alignment} value={this.state.alignment} onChange={this.handleChange}/></Table.Cell>}
           </Table.Row>
           <Table.Row>
             <Table.Cell>Age</Table.Cell>
-            <Table.Cell>{this.state.age}</Table.Cell>
+            {!editMode ? <Table.Cell width={8} >{this.state.age}</Table.Cell> : <Table.Cell width={8} textAlign='center'><Input fluid className='input-edit' name='age' placeholder={this.state.age} value={this.state.age} onChange={this.handleChange}/></Table.Cell>}
           </Table.Row>
           <Table.Row>
             <Table.Cell>Sex</Table.Cell>
-            <Table.Cell>{this.state.sex}</Table.Cell>
+            {!editMode ? <Table.Cell width={8} >{this.state.sex}</Table.Cell> : <Table.Cell width={8} textAlign='center'><Input fluid className='input-edit' name='sex' placeholder={this.state.sex} value={this.state.sex} onChange={this.handleChange}/></Table.Cell>}
           </Table.Row>
           <Table.Row>
             <Table.Cell>Height</Table.Cell>
-            <Table.Cell>{this.state.height}</Table.Cell>
+            {!editMode ? <Table.Cell width={8} >{this.state.height}</Table.Cell> : <Table.Cell width={8} textAlign='center'><Input fluid className='input-edit' name='height' placeholder={this.state.height} value={this.state.height} onChange={this.handleChange}/></Table.Cell>}
           </Table.Row>
           <Table.Row>
             <Table.Cell>Weight</Table.Cell>
-            <Table.Cell>{this.state.weight}</Table.Cell>
+            {!editMode ? <Table.Cell width={8} >{this.state.weight}</Table.Cell> : <Table.Cell width={8} textAlign='center'><Input fluid className='input-edit' name='weight' placeholder={this.state.weight} value={this.state.weight} onChange={this.handleChange}/></Table.Cell>}
           </Table.Row>
           <Table.Row>
             <Table.Cell>Hair Color</Table.Cell>
-            <Table.Cell>{this.state.hairColor}</Table.Cell>
+            {!editMode ? <Table.Cell width={8} >{this.state.hairColor}</Table.Cell> : <Table.Cell width={8} textAlign='center'><Input fluid className='input-edit' name='hairColor' placeholder={this.state.hairColor} value={this.state.hairColor} onChange={this.handleChange}/></Table.Cell>}
           </Table.Row>
           <Table.Row>
             <Table.Cell>Eye Color</Table.Cell>
-            <Table.Cell>{this.state.eyeColor}</Table.Cell>
+            {!editMode ? <Table.Cell width={8} >{this.state.eyeColor}</Table.Cell> : <Table.Cell width={8} textAlign='center'><Input fluid className='input-edit' name='eyeColor' placeholder={this.state.eyeColor} value={this.state.eyeColor} onChange={this.handleChange}/></Table.Cell>}
           </Table.Row>
           <Table.Row>
             <Table.Cell>Skin Color</Table.Cell>
-            <Table.Cell>{this.state.skinColor}</Table.Cell>
+            {!editMode ? <Table.Cell width={8} >{this.state.skinColor}</Table.Cell> : <Table.Cell width={8} textAlign='center'><Input fluid className='input-edit' name='skinColor' placeholder={this.state.skinColor} value={this.state.skinColor} onChange={this.handleChange}/></Table.Cell>}
           </Table.Row>
         </Table.Body>
       </Table>

@@ -26,6 +26,9 @@
 .editButton {
   margin-right: 1.5em !important;
 }
+.edit-button-small {
+  margin: 0;
+}
 
 .modal-table {
   /*margin-top: 5.5em !important;*/
