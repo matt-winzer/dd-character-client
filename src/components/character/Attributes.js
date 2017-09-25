@@ -6,6 +6,7 @@ class Attributes extends Component {
     super(props)
     this.state = {
       editMode: false,
+      savingData: false,
       background: props.background,
       alignment: props.alignment,
       age: props.age,
@@ -60,12 +61,18 @@ class Attributes extends Component {
       })
     }
 
+    this.setState({
+      ...this.state,
+      savingData: true
+    })
+
     fetch(url, options)
       .then(response => response.json())
       .then(response => {
         this.setState({
           ...this.state,
-          editMode: editMode
+          editMode: editMode,
+          savingData: false
         })
       })
       .catch(err => {
@@ -75,13 +82,14 @@ class Attributes extends Component {
 
   render() {
     const editMode = this.state.editMode
+    const savingData = this.state.savingData
 
     return (
       <Table celled unstackable inverted color='violet'>
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Attribute</Table.HeaderCell>
-            <Table.HeaderCell className='table-header-edit'>Value{!editMode ? <Button basic size='small' className='edit-button-small' icon='edit' color='green' onClick={this.toggleEditMode}/> : <Button size='small' className='edit-button-small' icon='save' color='green' onClick={this.saveEdits.bind(null, this.props.id)}/>}</Table.HeaderCell>
+            <Table.HeaderCell className='table-header-edit'>Value{!editMode ? <Button size='small' circular className='edit-button-small' icon='edit' color='white' onClick={this.toggleEditMode}/> : <Button size='small' circular className='edit-button-small' icon='save' color='green' loading={savingData ? true : false} onClick={this.saveEdits.bind(null, this.props.id)}/>}</Table.HeaderCell>
 
           </Table.Row>
         </Table.Header>
