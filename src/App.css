@@ -19,7 +19,7 @@
 }
 
 .main-content {
-  margin-top: 5em;
+  margin-top: 2em;
   margin-bottom: 2em;
 }
 
@@ -50,6 +50,10 @@
 }
 
 p {
+  font-size: 1.25em;
+}
+
+a.nav-link {
   font-size: 1.25em;
 }
 
