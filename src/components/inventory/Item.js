@@ -6,6 +6,7 @@ class Item extends Component {
     super(props)
     this.state = {
       editMode: false,
+      savingData: false,
       name: props.name,
       description: props.description,
       category: props.category,
@@ -54,12 +55,18 @@ class Item extends Component {
       })
     }
 
+    this.setState({
+      ...this.state,
+      savingData: true
+    })
+
     fetch(url, options)
       .then(response => response.json())
       .then(response => {
         this.setState({
           ...this.state,
-          editMode: editMode
+          editMode: editMode,
+          savingData: false
         })
       })
       .catch(err => {
@@ -69,6 +76,7 @@ class Item extends Component {
 
   render() {
     const editMode = this.state.editMode
+    const savingData = this.state.savingData
 
     return (
       <Modal trigger={<Table.Row>
@@ -82,7 +90,7 @@ class Item extends Component {
           {this.state.name}
         </Header>
         <Header as='h1' floated='right'>
-          {!editMode ? <Button className='editButton' icon='edit' color='grey' content='Edit' onClick={this.toggleEditMode}/> : <Button className='editButton' icon='save' color='green' content='Save' onClick={this.saveEdits.bind(null, this.props.id)}/>}
+          {!editMode ? <Button circular className='editButton' icon='edit' color='grey' content='Edit' onClick={this.toggleEditMode}/> : <Button circular className='editButton' icon='save' color='green' content='Save' loading={savingData ? true : false} onClick={this.saveEdits.bind(null, this.props.id)}/>}
         </Header>
         <Modal.Content>
           <Table className='modal-table' compact={editMode ? true : false} celled striped unstackable color='orange'>

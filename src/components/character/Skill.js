@@ -86,7 +86,7 @@ class Skill extends Component {
           {!editMode ? <Button circular className='editButton' icon='edit' color='grey' content='Edit' onClick={this.toggleEditMode}/> : <Button circular className='editButton' icon='save' color='green' content='Save' loading={savingData ? true : false} onClick={this.saveEdits.bind(null, this.props.id, this.state.characterId)}/>}
         </Header>
         <Modal.Content>
-          <Table className='modal-table' compact={editMode ? true : false} celled striped unstackable color='green'>
+          <Table className='modal-table' compact={editMode ? true : false} celled striped unstackable color='blue'>
               <Table.Header className='modal-table-header' fullWidth>
                 <Table.Row>
                   <Table.HeaderCell colSpan='2'>
