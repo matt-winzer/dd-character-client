@@ -12,7 +12,7 @@ class Skill extends Component {
       value: props.value,
       modifier: props.modifier,
       abilityName: props.abilityName,
-      baseUrl: 'http://localhost:3000/character'
+      baseUrl: 'https://drageons.herokuapp.com/character'
     }
   }
 
@@ -48,7 +48,7 @@ class Skill extends Component {
         modifier: this.state.modifier
       })
     }
-    
+
     fetch(url, options)
       .then(response => response.json())
       .then(response => {

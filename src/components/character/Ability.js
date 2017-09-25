@@ -12,7 +12,7 @@ class Ability extends Component {
       name: props.name,
       value: props.value,
       modifier: props.modifier,
-      baseUrl: 'http://localhost:3000/character'
+      baseUrl: `${props.baseUrl}character`
     }
   }
 

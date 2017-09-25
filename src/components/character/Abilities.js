@@ -7,6 +7,7 @@ const Abilities = (props) => {
   const abilities = props.abilities.map(ability => {
     return <Ability key={ability.id}
                     id={ability.id}
+                    baseUrl={props.baseUrl}
                     characterId={props.id}
                     name={ability.full_name}
                     value={ability.value}

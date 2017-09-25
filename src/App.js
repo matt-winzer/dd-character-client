@@ -6,11 +6,14 @@ import Character from './components/character/Character'
 import Navbar from './components/Navbar'
 import Inventory from './components/inventory/Inventory'
 
+const herokuUrl = 'https://drageons.herokuapp.com/'
+const localUrl = 'http://localhost:3000/'
+
 class App extends Component {
-  state = {characters: null}
+  state = {characters: null, baseUrl: herokuUrl}
 
   async componentWillMount() {
-    const url = 'http://localhost:3000/character'
+    const url = `${this.state.baseUrl}character`
     const response = await fetch(url)
     const json = await response.json()
     this.setState({
@@ -29,8 +32,8 @@ class App extends Component {
       return (
         <div>
           <Navbar />
-          <Character character={this.state.characters[0]} createModalDescription={this.createModalDescription}/>
-          <Inventory character={this.state.characters[0]}/>
+          <Character character={this.state.characters[0]} baseUrl={this.state.baseUrl} createModalDescription={this.createModalDescription}/>
+          <Inventory character={this.state.characters[0]} baseUrl={this.state.baseUrl}/>
         </div>
       )
     }

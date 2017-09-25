@@ -15,7 +15,7 @@ class Attributes extends Component {
       hairColor: props.hairColor,
       eyeColor: props.eyeColor,
       skinColor: props.skinColor,
-      baseUrl: 'http://localhost:3000/character'
+      baseUrl: 'https://drageons.herokuapp.com/character'
     }
   }
 

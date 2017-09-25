@@ -12,7 +12,7 @@ class Item extends Component {
       costValue: props.costValue,
       costUnit: props.costUnit,
       weight: props.weight,
-      baseUrl: 'http://localhost:3000/item'
+      baseUrl: `${props.baseUrl}item`
     }
   }
 
