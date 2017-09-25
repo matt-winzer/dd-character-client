@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Table, Button, Input, TextArea } from 'semantic-ui-react'
-
+import { Table, Button, Input } from 'semantic-ui-react'
 
 class Attributes extends Component {
   constructor(props) {
@@ -16,7 +15,7 @@ class Attributes extends Component {
       hairColor: props.hairColor,
       eyeColor: props.eyeColor,
       skinColor: props.skinColor,
-      baseUrl: 'http://localhost:3000/character'
+      baseUrl: 'https://drageons.herokuapp.com/character'
     }
   }
 

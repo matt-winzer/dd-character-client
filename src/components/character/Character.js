@@ -20,21 +20,26 @@ const Character = (props) => {
         <Grid stackable>
           <Grid.Row columns={3}>
             <Grid.Column>
-              <Skills skills={props.character.skills}/>
+              <Skills   id={props.character.id}
+                        baseUrl={props.baseUrl}
+                        skills={props.character.skills}/>
             </Grid.Column>
             <Grid.Column>
               <Abilities  id={props.character.id}
+                          baseUrl={props.baseUrl}
                           abilities={props.character.abilities}
                           createModalDescription={props.createModalDescription}/>
               <Proficiencies proficiencies={props.character.proficiencies}/>
             </Grid.Column>
             <Grid.Column>
               <Personality  id={props.character.id}
+                            baseUrl={props.baseUrl}
                             traits={props.character.personality_traits}
                             ideals={props.character.ideals}
                             bonds={props.character.bonds}
                             flaws={props.character.flaws}/>
               <Attributes id={props.character.id}
+                          baseUrl={props.baseUrl}
                           background={props.character.background}
                           alignment={props.character.alignment}
                           age={props.character.age}

@@ -7,6 +7,7 @@ const Items = (props) => {
   const items = props.items.map(item => {
     return <Item  key={item.id}
                   id={item.id}
+                  baseUrl={props.baseUrl}
                   name={item.name}
                   category={item.category}
                   description={item.description}

@@ -7,6 +7,7 @@ const Armors = (props) => {
   const armors = props.armors.map(armor => {
     return <Armor key={armor.id}
                   id={armor.id}
+                  baseUrl={props.baseUrl}
                   name={armor.name}
                   description={armor.description}
                   category={armor.category}

@@ -7,6 +7,7 @@ const Weapons = (props) => {
   const weapons = props.weapons.map(weapon => {
     return <Weapon  key={weapon.id}
                     id={weapon.id}
+                    baseUrl={props.baseUrl}
                     name={weapon.name}
                     category={weapon.category}
                     description={weapon.description}

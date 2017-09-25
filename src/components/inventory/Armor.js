@@ -17,7 +17,7 @@ class Armor extends Component {
       weight: props.weight,
       acMax: props.acMax,
       minStrength: props.minStrength,
-      baseUrl: 'http://localhost:3000/armor'
+      baseUrl: `${props.baseUrl}armor`
     }
   }
 

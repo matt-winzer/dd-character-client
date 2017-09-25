@@ -18,15 +18,18 @@ const Inventory = (props) => {
         <Grid stackable>
           <Grid.Row columns={2}>
             <Grid.Column>
-              <Weapons weapons={props.character.weapons}/>
+              <Weapons  baseUrl={props.baseUrl}
+                        weapons={props.character.weapons}/>
             </Grid.Column>
             <Grid.Column>
-              <Armors armors={props.character.armors}/>
+              <Armors baseUrl={props.baseUrl}
+                      armors={props.character.armors}/>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row columns={1}>
             <Grid.Column>
-              <Items items={props.character.items}/>
+              <Items  baseUrl={props.baseUrl}
+                      items={props.character.items}/>
             </Grid.Column>
           </Grid.Row>
         </Grid>

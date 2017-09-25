@@ -16,7 +16,7 @@ class Weapon extends Component {
       damageDiceCount: props.damageDiceCount,
       damageDiceValue: props.damageDiceValue,
       weight: props.weight,
-      baseUrl: 'http://localhost:3000/weapon'
+      baseUrl: `${props.baseUrl}weapon`
     }
   }
 
