@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Menu } from 'semantic-ui-react'
+import { Menu, Segment } from 'semantic-ui-react'
 
 export default class Navbar extends Component {
   state = { activeItem: 'drageons', logged: false }
@@ -11,26 +11,30 @@ export default class Navbar extends Component {
 
     if (this.state.logged) {
       return (
-      <Menu size='huge' inverted stackable fixed>
-        <Menu.Item name='drageons' active={activeItem === 'drageons'} onClick={this.handleItemClick} />
-        <Menu.Item name='messages' active={activeItem === 'messages'} onClick={this.handleItemClick} />
+        <Segment inverted>
+          <Menu stackable inverted pointing secondary>
+            <Menu.Item className='nav-link' name='drageons' active={activeItem === 'drageons'} onClick={this.handleItemClick} />
+            <Menu.Item className='nav-link' name='messages' active={activeItem === 'messages'} onClick={this.handleItemClick} />
 
-        <Menu.Menu position='right'>
-          <Menu.Item name='log out' active={activeItem === 'log out'} onClick={this.handleItemClick} />
-        </Menu.Menu>
-      </Menu>
+            <Menu.Menu position='right'>
+              <Menu.Item className='nav-link' name='logout' active={activeItem === 'logout'} onClick={this.handleItemClick} />
+            </Menu.Menu>
+          </Menu>
+        </Segment>
       )
     }
-    return (
-      <Menu size='huge' inverted stackable fixed='top'>
-        <Menu.Item name='drageons' active={activeItem === 'drageons'} onClick={this.handleItemClick} />
-        <Menu.Item name='messages' active={activeItem === 'messages'} onClick={this.handleItemClick} />
 
-        <Menu.Menu position='right'>
-            <Menu.Item name='sign up' active={activeItem === 'sign up'} onClick={this.handleItemClick} />
-            <Menu.Item name='log in' active={activeItem === 'log in'} onClick={this.handleItemClick} />
-        </Menu.Menu>
-      </Menu>
+    return (
+      <Segment inverted>
+        <Menu stackable inverted pointing secondary>
+          <Menu.Item className='nav-link' name='drageons' active={activeItem === 'drageons'} onClick={this.handleItemClick} />
+
+          <Menu.Menu position='right'>
+              <Menu.Item className='nav-link' name='signup' active={activeItem === 'signup'} onClick={this.handleItemClick} />
+              <Menu.Item className='nav-link' name='login' active={activeItem === 'login'} onClick={this.handleItemClick} />
+          </Menu.Menu>
+        </Menu>
+      </Segment>
     )
   }
 }
