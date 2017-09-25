@@ -1,8 +1,7 @@
 import React from 'react';
-import { Container, Grid } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 
 import Spinner from '../Spinner'
-import CharacterHeader from '../CharacterHeader'
 import Weapons from './Weapons'
 import Items from './Items'
 import Armors from './Armors'

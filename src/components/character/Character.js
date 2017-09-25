@@ -1,14 +1,12 @@
 import React from 'react';
-import { Container, Grid, Tab } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 
 import Spinner from '../Spinner'
-import CharacterHeader from '../CharacterHeader'
 import Attributes from './Attributes'
 import Abilities from './Abilities'
 import Personality from './Personality'
 import Skills from './Skills'
 import Proficiencies from './Proficiencies'
-import CharacterTabs from './CharacterTabs'
 
 const Character = (props) => {
   if (props.character) {
