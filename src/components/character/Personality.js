@@ -62,7 +62,8 @@ class Personality extends Component {
       .then(response => {
         this.setState({
           ...this.state,
-          editMode: editMode
+          editMode: editMode,
+          savingData: false
         })
       })
       .catch(err => {
