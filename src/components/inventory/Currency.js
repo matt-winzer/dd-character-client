@@ -13,7 +13,7 @@ class Currency extends Component {
       gold: this.props.gold,
       electrum: this.props.electrum,
       platinum: this.props.platinum,
-      baseUrl: 'https://drageons.herokuapp.com/character'
+      baseUrl: `${this.props.baseUrl}character`
     }
   }
 
