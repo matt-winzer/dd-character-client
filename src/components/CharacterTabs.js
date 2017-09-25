@@ -1,14 +1,15 @@
 import React from 'react';
 import { Container, Grid, Tab } from 'semantic-ui-react'
 
-import Spinner from '../Spinner'
+import Spinner from './Spinner'
 import CharacterHeader from './CharacterHeader'
-import Attributes from './Attributes'
-import Abilities from './Abilities'
-import Personality from './Personality'
-import Skills from './Skills'
-import Proficiencies from './Proficiencies'
-import Inventory from '../inventory/Inventory'
+import Attributes from './character/Attributes'
+import Abilities from './character/Abilities'
+import Personality from './character/Personality'
+import Skills from './character/Skills'
+import Proficiencies from './character/Proficiencies'
+import Inventory from './inventory/Inventory'
+import Character from './character/Character'
 
 const CharacterTabs = (props) => {
   const panes = [
@@ -57,7 +58,13 @@ const CharacterTabs = (props) => {
 
   if (props.character) {
     return (
-      <Tab panes={panes} />
+      <Container className='main-content'>
+        <CharacterHeader  name={props.character.name}
+                          level={props.character.level}
+                          _class={props.character.class.name}
+                          race={props.character.race}/>
+        <Tab panes={panes} />
+      </Container>
     )
   }
   return <Spinner />
