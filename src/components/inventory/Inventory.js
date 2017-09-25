@@ -2,10 +2,10 @@ import React from 'react';
 import { Grid } from 'semantic-ui-react'
 
 import Spinner from '../Spinner'
-import Weapons from './Weapons'
-import Items from './Items'
-import Armors from './Armors'
-import Currency from './Currency'
+import Weapons from './weapons/Weapons'
+import Items from './items/Items'
+import Armors from './armors/Armors'
+import Currency from './currency/Currency'
 
 const Inventory = (props) => {
   if (props.character) {
