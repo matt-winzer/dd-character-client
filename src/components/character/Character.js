@@ -2,11 +2,11 @@ import React from 'react';
 import { Grid } from 'semantic-ui-react'
 
 import Spinner from '../Spinner'
-import Attributes from './Attributes'
-import Abilities from './Abilities'
-import Personality from './Personality'
-import Skills from './Skills'
-import Proficiencies from './Proficiencies'
+import Abilities from './abilities/Abilities'
+import Attributes from './attributes/Attributes'
+import Personality from './personality/Personality'
+import Proficiencies from './proficiencies/Proficiencies'
+import Skills from './skills/Skills'
 
 const Character = (props) => {
   if (props.character) {
