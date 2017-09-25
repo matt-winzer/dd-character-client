@@ -13,7 +13,7 @@ class Skill extends Component {
       value: props.value,
       modifier: props.modifier,
       abilityName: props.abilityName,
-      baseUrl: 'https://drageons.herokuapp.com/character'
+      baseUrl: `${props.baseUrl}character`
     }
   }
 
