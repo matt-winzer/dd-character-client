@@ -74,7 +74,7 @@ class CombatStats extends Component {
     const savingData = this.state.savingData
 
     return (
-      <Table celledg unstackable inverted color='red'>
+      <Table celledg unstackable inverted color='orange'>
         <Table.Header className='modal-table-header' fullWidth>
           <Table.Row>
             <Table.HeaderCell>Health</Table.HeaderCell>
