@@ -26,7 +26,9 @@ class Inventory extends Component {
     const addWeapon = !this.state.addWeapon
     this.setState({
       ...this.state,
-      addWeapon: addWeapon
+      addWeapon: addWeapon,
+      addArmor: false,
+      addItem: false
     })
   }
 
@@ -34,7 +36,9 @@ class Inventory extends Component {
     const addArmor = !this.state.addArmor
     this.setState({
       ...this.state,
-      addArmor: addArmor
+      addArmor: addArmor,
+      addWeapon: false,
+      addItem: false
     })
   }
 
@@ -42,7 +46,9 @@ class Inventory extends Component {
     const addItem = !this.state.addItem
     this.setState({
       ...this.state,
-      addItem: addItem
+      addItem: addItem,
+      addArmor: false,
+      addWeapon: false
     })
   }
 
@@ -79,9 +85,9 @@ class Inventory extends Component {
           </Grid.Row>
           <Grid.Row>
             <Grid.Column>
-              <Button onClick={this.toggleAddWeapon} content='Add Weapon'/>
-              <Button onClick={this.toggleAddArmor} content='Add Armor'/>
-              <Button onClick={this.toggleAddItem} content='Add Item'/>
+              <Button onClick={this.toggleAddWeapon} icon='crosshairs' content='Add Weapon'/>
+              <Button onClick={this.toggleAddArmor} icon='shield' content='Add Armor'/>
+              <Button onClick={this.toggleAddItem} icon='first aid' content='Add Item'/>
               {addWeapon &&
                 <AddWeaponList  id={this.props.character.id}
                                 weaponUrl={this.state.weaponUrl}/>
