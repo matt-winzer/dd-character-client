@@ -26,6 +26,7 @@
 .editButton {
   margin-right: 1.5em !important;
 }
+
 .edit-button-small {
   margin: 0;
 }
@@ -55,6 +56,12 @@ p {
 
 a.nav-link {
   font-size: 1.25em;
+}
+
+div.nav-bar {
+  padding-top: .5em !important;
+  padding-bottom: .5em !important;
+  border-radius: 0 !important;
 }
 
 @keyframes App-logo-spin {

@@ -5,12 +5,13 @@ import Spinner from './Spinner'
 import CharacterHeader from './CharacterHeader'
 import Inventory from './inventory/Inventory'
 import Character from './character/Character'
+import Combat from './combat/Combat'
 
 const CharacterTabs = (props) => {
   const panes = [
     { menuItem: 'Character', render: () => <Tab.Pane><Character character={props.character} baseUrl={props.baseUrl} createModalDescription={props.createModalDescription}/></Tab.Pane>},
     { menuItem: 'Inventory', render: () => <Tab.Pane><Inventory character={props.character} baseUrl={props.baseUrl}/></Tab.Pane> },
-    { menuItem: 'Combat', render: () => <Tab.Pane>Combat</Tab.Pane> },
+    { menuItem: 'Combat', render: () => <Tab.Pane><Combat character={props.character} baseUrl={props.baseUrl}/></Tab.Pane> },
   ]
 
   if (props.character) {

@@ -11,7 +11,7 @@ export default class Navbar extends Component {
 
     if (this.state.logged) {
       return (
-        <Segment inverted>
+        <Segment className='nav-bar' inverted>
           <Menu stackable inverted pointing secondary>
             <Menu.Item className='nav-link' name='drageons' active={activeItem === 'drageons'} onClick={this.handleItemClick} />
             <Menu.Item className='nav-link' name='messages' active={activeItem === 'messages'} onClick={this.handleItemClick} />
@@ -25,7 +25,7 @@ export default class Navbar extends Component {
     }
 
     return (
-      <Segment inverted>
+      <Segment className='nav-bar' inverted>
         <Menu stackable inverted pointing secondary>
           <Menu.Item className='nav-link' name='drageons' active={activeItem === 'drageons'} onClick={this.handleItemClick} />
 
