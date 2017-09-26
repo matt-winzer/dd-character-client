@@ -15,8 +15,12 @@ const Combat = (props) => {
           <Grid.Column>
             <BattleStats  id={props.character.id}
                           baseUrl={props.baseUrl}
-                          features={props.character.features}
-                          createModalDescription={props.createModalDescription}/>
+                          hpTotal={props.character.hp_total}
+                          hpCurrent={props.character.hp_current}
+                          hpBonus={props.character.hp_bonus}
+                          speed={props.character.speed}
+                          initiative={props.character.initiative}
+                          armorClass={props.character.armor_class}/>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row columns={2}>
