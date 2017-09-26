@@ -94,11 +94,13 @@ class Ability extends Component {
     const savingData = this.state.savingData
 
     return (
-      <Modal trigger={<Table.Row>
+      <Modal  trigger={<Table.Row>
                         <Table.Cell>{this.state.name}</Table.Cell>
                         <Table.Cell textAlign='center'>{this.state.value}</Table.Cell>
                         <Table.Cell textAlign='center'>{this.state.modifier}</Table.Cell>
-                      </Table.Row>} size='small' closeIcon>
+                      </Table.Row>}
+              size='small'
+              closeIcon>
         <Header as='h1' floated='left'>
           <Icon name='universal access'/>
           {this.state.name}
@@ -106,7 +108,7 @@ class Ability extends Component {
         <Header as='h1' floated='right'>
           {!editMode ? <Button circular className='editButton' icon='edit' color='grey' content='Edit' onClick={this.toggleEditMode}/> : <Button circular className='editButton' icon='save' color='green' content='Save' loading={savingData ? true : false} onClick={this.saveEdits.bind(null, this.props.id, this.state.characterId)}/>}
         </Header>
-        <Modal.Content>
+        <Modal.Content className='scrolling-modal-content' scrolling>
           <Table className='modal-table' compact={editMode ? true : false} celled striped unstackable color='green'>
               <Table.Header className='modal-table-header' fullWidth>
                 <Table.Row>

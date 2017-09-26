@@ -12,7 +12,7 @@ class Personality extends Component {
       ideals: this.props.ideals,
       bonds: this.props.bonds,
       flaws: this.props.flaws,
-      baseUrl: 'https://drageons.herokuapp.com/character'
+      baseUrl: `${props.baseUrl}character`
     }
   }
 
@@ -81,7 +81,6 @@ class Personality extends Component {
           <Table.Row>
             <Table.HeaderCell>Personality</Table.HeaderCell>
             <Table.HeaderCell className='table-header-edit'>Description{!editMode ? <Button size='small' circular className='edit-button-small' icon='edit' onClick={this.toggleEditMode}/> : <Button size='small' circular className='edit-button-small' icon='save' color='green' loading={savingData ? true : false} onClick={this.saveEdits.bind(null, this.props.id)}/>}</Table.HeaderCell>
-
           </Table.Row>
         </Table.Header>
 
