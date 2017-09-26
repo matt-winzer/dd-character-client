@@ -11,9 +11,6 @@ class CombatStats extends Component {
       hpTotal: this.props.hpTotal,
       hpCurrent: this.props.hpCurrent,
       hpBonus: this.props.hpBonus,
-      speed: this.props.speed,
-      initiative: this.props.initiative,
-      armorClass: this.props.armorClass,
       baseUrl: `${this.props.baseUrl}character`
     }
   }
@@ -47,11 +44,9 @@ class CombatStats extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        copper: this.state.copper,
-        silver: this.state.silver,
-        gold: this.state.gold,
-        electrum: this.state.electrum,
-        platinum: this.state.platinum
+        hp_current: this.state.hpCurrent,
+        hp_total: this.state.hpTotal,
+        hp_bonus: this.state.hpBonus,
       })
     }
 
@@ -79,10 +74,10 @@ class CombatStats extends Component {
     const savingData = this.state.savingData
 
     return (
-      <Table celled definition inverted color='pink'>
+      <Table celled unstackable inverted color='pink'>
         <Table.Header className='modal-table-header' fullWidth>
           <Table.Row>
-            <Table.HeaderCell>Stat</Table.HeaderCell>
+            <Table.HeaderCell>Health</Table.HeaderCell>
             <Table.HeaderCell className='table-header-edit'>Value{!editMode ? <Button size='small' circular className='edit-button-small' icon='edit' onClick={this.toggleEditMode}/> : <Button size='small' circular className='edit-button-small' icon='save' color='green' loading={savingData ? true : false} onClick={this.saveEdits.bind(null, this.props.id)}/>}</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
