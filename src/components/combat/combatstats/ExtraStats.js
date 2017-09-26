@@ -74,7 +74,7 @@ class ExtraStats extends Component {
     const savingData = this.state.savingData
 
     return (
-      <Table celled unstackable inverted color='blue'>
+      <Table celled unstackable color='blue'>
         <Table.Header className='modal-table-header' fullWidth>
           <Table.Row>
             <Table.HeaderCell>Stat</Table.HeaderCell>
