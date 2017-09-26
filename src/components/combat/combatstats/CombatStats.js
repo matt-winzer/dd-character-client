@@ -8,9 +8,6 @@ class CombatStats extends Component {
     this.state = {
       editMode: false,
       savingData: false,
-      hpTotal: this.props.hpTotal,
-      hpCurrent: this.props.hpCurrent,
-      hpBonus: this.props.hpBonus,
       speed: this.props.speed,
       initiative: this.props.initiative,
       armorClass: this.props.armorClass,
@@ -47,11 +44,9 @@ class CombatStats extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        copper: this.state.copper,
-        silver: this.state.silver,
-        gold: this.state.gold,
-        electrum: this.state.electrum,
-        platinum: this.state.platinum
+        speed: this.state.speed,
+        initiative: this.state.initiative,
+        armor_class: this.state.armorClass,
       })
     }
 
