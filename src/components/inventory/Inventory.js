@@ -7,6 +7,8 @@ import Items from './items/Items'
 import Armors from './armors/Armors'
 import Currency from './currency/Currency'
 
+import AddWeaponList from './weapons/AddWeaponList'
+
 const Inventory = (props) => {
   if (props.character) {
     return (
@@ -33,8 +35,13 @@ const Inventory = (props) => {
                       silver={props.character.silver}
                       gold={props.character.gold}
                       electrum={props.character.electrum}
-                      platinum={props.character.platinum}
-                      />
+                      platinum={props.character.platinum}/>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column>
+            <AddWeaponList  id={props.character.id}
+                        baseUrl={props.baseUrl}/>
           </Grid.Column>
         </Grid.Row>
       </Grid>

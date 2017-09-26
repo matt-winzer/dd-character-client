@@ -21,7 +21,7 @@ const CharacterTabs = (props) => {
                           level={props.character.level}
                           _class={props.character.class.name}
                           race={props.character.race}/>
-        <Tab panes={panes} defaultActiveIndex={2}/>
+        <Tab panes={panes} defaultActiveIndex={1}/>
       </Container>
     )
   }
