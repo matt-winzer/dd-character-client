@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Table, Modal, Header, Button, Icon, Input, Form, TextArea } from 'semantic-ui-react'
 
+import AddWeapon from './AddWeapon'
+
 class AddWeaponList extends Component {
   constructor(props) {
     super(props)
@@ -18,11 +20,19 @@ class AddWeaponList extends Component {
       .then(weapons => {
         const newWeapons = weapons.map(weapon => {
           return (
-            <Table.Row>
-              <Table.Cell width={8}>{weapon.name}</Table.Cell>
-              <Table.Cell width={8}>{weapon.range_normal}</Table.Cell>
-              <Table.Cell width={8}>{weapon.damage_dice_count} D{weapon.damage_dice_value}</Table.Cell>
-            </Table.Row>
+            <AddWeapon  key={weapon.id}
+                        id={weapon.id}
+                        baseUrl={this.props.baseUrl}
+                        name={weapon.name}
+                        category={weapon.category}
+                        description={weapon.description}
+                        range={weapon.range_normal}
+                        damageDiceCount={weapon.damage_dice_count}
+                        damageDiceValue={weapon.damage_dice_value}
+                        damageType={weapon.damage_type.name}
+                        weight={weapon.weight}
+                        costUnit={weapon.cost_unit}
+                        costValue={weapon.cost_value}/>
           )
         })
         this.setState({
@@ -98,12 +108,12 @@ class AddWeaponList extends Component {
     const weapons = this.state.weapons
 
     return (
-      <Table className='modal-table' compact={editMode ? true : false} celled striped unstackable color='red'>
+      <Table className='modal-table' compact={editMode ? true : false} celled selectable unstackable color='red'>
           <Table.Header className='modal-table-header' fullWidth>
             <Table.Row>
               <Table.HeaderCell>Weapon</Table.HeaderCell>
-              <Table.HeaderCell>Range</Table.HeaderCell>
-              <Table.HeaderCell>Damage</Table.HeaderCell>
+              <Table.HeaderCell textAlign='center'>Range</Table.HeaderCell>
+              <Table.HeaderCell textAlign='center'>Damage</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
         <Table.Body>
