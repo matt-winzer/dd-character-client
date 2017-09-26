@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Table, Modal, Header, Button, Icon, Input, Label } from 'semantic-ui-react'
 
-class Feature extends Component {
+class Spell extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -10,7 +10,13 @@ class Feature extends Component {
       description: null,
       characterId: props.characterId,
       name: props.name,
+      range: props.range,
+      ritual: props.ritual,
+      duration: props.duration,
+      concentration: props.concentration,
+      castingTime: props.castingTime,
       level: props.level,
+      magicSchool: props.magicSchool,
       className: props.className,
       baseUrl: `${props.baseUrl}character`
     }
@@ -19,8 +25,8 @@ class Feature extends Component {
   componentDidMount() {
     fetch(this.props.url)
       .then(response => response.json())
-      .then(ability => {
-        const description = this.props.createModalDescription(ability.desc)
+      .then(spell => {
+        const description = this.props.createModalDescription(spell.desc)
         this.setState({
           description: description
         })
@@ -123,4 +129,4 @@ class Feature extends Component {
   }
 }
 
-export default Feature
+export default Spell
