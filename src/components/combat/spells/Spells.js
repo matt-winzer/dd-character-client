@@ -22,7 +22,7 @@ const Spells = (props) => {
   })
 
   return (
-    <Table celled selectable unstackable inverted color='green'>
+    <Table celled selectable unstackable inverted color='green' className='table-bottom-margin'>
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell>Spell</Table.HeaderCell>

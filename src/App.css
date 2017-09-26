@@ -51,7 +51,7 @@
 }
 
 p {
-  font-size: 1.25em;
+  /*font-size: 1.5em;*/
 }
 
 a.nav-link {
@@ -62,6 +62,10 @@ div.nav-bar {
   padding-top: .5em !important;
   padding-bottom: .5em !important;
   border-radius: 0 !important;
+}
+
+.table-bottom-margin {
+  margin-bottom: 2em !important;
 }
 
 @keyframes App-logo-spin {

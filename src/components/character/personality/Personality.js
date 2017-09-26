@@ -12,7 +12,7 @@ class Personality extends Component {
       ideals: this.props.ideals,
       bonds: this.props.bonds,
       flaws: this.props.flaws,
-      baseUrl: 'https://drageons.herokuapp.com/character'
+      baseUrl: `${props.baseUrl}character`
     }
   }
 

@@ -4,6 +4,7 @@ import { Grid } from 'semantic-ui-react'
 import Spinner from '../Spinner'
 import Features from './features/Features'
 import Spells from './spells/Spells'
+import Weapons from '../inventory/weapons/Weapons'
 
 const Combat = (props) => {
   if (props.character) {
@@ -21,11 +22,13 @@ const Combat = (props) => {
                       baseUrl={props.baseUrl}
                       spells={props.character.spells}
                       createModalDescription={props.createModalDescription}/>
+            <Weapons  baseUrl={props.baseUrl}
+                      weapons={props.character.weapons}/>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row columns={2}>
           <Grid.Column>
-            <h1>Test</h1>
+
           </Grid.Column>
           <Grid.Column>
             <h1>Test</h1>
