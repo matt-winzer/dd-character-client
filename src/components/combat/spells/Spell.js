@@ -94,7 +94,7 @@ class Spell extends Component {
       <Modal trigger={<Table.Row>
                         <Table.Cell>{this.state.name}</Table.Cell>
                         <Table.Cell textAlign='center'>{this.state.level}</Table.Cell>
-                        <Table.Cell textAlign='center'>{this.state.className}</Table.Cell>
+                        <Table.Cell textAlign='center'>{this.state.magicSchool}</Table.Cell>
                       </Table.Row>} size='small' closeIcon>
         <Header as='h1' floated='left'>
           <Icon name='universal access'/>
@@ -119,7 +119,7 @@ class Spell extends Component {
               </Table.Row>
               <Table.Row>
                 <Table.Cell width={5}><strong>Class</strong></Table.Cell>
-                {!editMode ? <Table.Cell>{this.state.className}</Table.Cell> : <Table.Cell textAlign='center'><Input fluid className='input-edit' name='className' placeholder={this.state.className} value={this.state.className} onChange={this.handleChange}/></Table.Cell>}
+                {!editMode ? <Table.Cell>{this.state.magicSchool}</Table.Cell> : <Table.Cell textAlign='center'><Input fluid className='input-edit' name='magic_shool' placeholder={this.state.magicSchool} value={this.state.magicSchool} onChange={this.handleChange}/></Table.Cell>}
               </Table.Row>
             </Table.Body>
           </Table>
