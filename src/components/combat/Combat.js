@@ -12,7 +12,7 @@ const Combat = (props) => {
           <Grid.Column>
             <Features   id={props.character.id}
                         baseUrl={props.baseUrl}
-                        abilities={props.character.abilities}
+                        features={props.character.features}
                         createModalDescription={props.createModalDescription}/>
           </Grid.Column>
           <Grid.Column>

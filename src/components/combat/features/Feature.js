@@ -8,11 +8,10 @@ class Ability extends Component {
       editMode: false,
       savingData: false,
       description: null,
-      skills: [],
       characterId: props.characterId,
       name: props.name,
-      value: props.value,
-      modifier: props.modifier,
+      level: props.level,
+      className: props.className,
       baseUrl: `${props.baseUrl}character`
     }
   }
@@ -22,18 +21,10 @@ class Ability extends Component {
       .then(response => response.json())
       .then(ability => {
         const description = this.props.createModalDescription(ability.desc)
-        const skills = this.getAbilitySkills(ability.skills)
         this.setState({
-          description: description,
-          skills: skills
+          description: description
         })
       })
-  }
-
-  getAbilitySkills(skillsArray) {
-    return skillsArray.map(skill => {
-      return <Label color='blue' key={skill.name}>{skill.name}</Label>
-    })
   }
 
   handleChange = (e) => {
@@ -96,8 +87,8 @@ class Ability extends Component {
     return (
       <Modal trigger={<Table.Row>
                         <Table.Cell>{this.state.name}</Table.Cell>
-                        <Table.Cell textAlign='center'>{this.state.value}</Table.Cell>
-                        <Table.Cell textAlign='center'>{this.state.modifier}</Table.Cell>
+                        <Table.Cell textAlign='center'>{this.state.level}</Table.Cell>
+                        <Table.Cell textAlign='center'>{this.state.className}</Table.Cell>
                       </Table.Row>} size='small' closeIcon>
         <Header as='h1' floated='left'>
           <Icon name='universal access'/>
@@ -117,16 +108,12 @@ class Ability extends Component {
               </Table.Header>
             <Table.Body>
               <Table.Row>
-                <Table.Cell width={5}><strong>Value</strong></Table.Cell>
-                {!editMode ? <Table.Cell >{this.state.value}</Table.Cell> : <Table.Cell textAlign='center'><Input fluid className='input-edit' name='value' placeholder={this.state.value} value={this.state.value} onChange={this.handleChange}/></Table.Cell>}
+                <Table.Cell width={5}><strong>Level</strong></Table.Cell>
+                {!editMode ? <Table.Cell >{this.state.level}</Table.Cell> : <Table.Cell textAlign='center'><Input fluid className='input-edit' name='level' placeholder={this.state.level} value={this.state.level} onChange={this.handleChange}/></Table.Cell>}
               </Table.Row>
               <Table.Row>
-                <Table.Cell width={5}><strong>Modifer</strong></Table.Cell>
-                {!editMode ? <Table.Cell>{this.state.modifier}</Table.Cell> : <Table.Cell textAlign='center'><Input fluid className='input-edit' name='modifier' placeholder={this.state.modifier} value={this.state.modifier} onChange={this.handleChange}/></Table.Cell>}
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell width={5}><strong>Skills</strong></Table.Cell>
-                <Table.Cell>{this.state.skills || 'No skills affected.'}</Table.Cell>
+                <Table.Cell width={5}><strong>Class</strong></Table.Cell>
+                {!editMode ? <Table.Cell>{this.state.className}</Table.Cell> : <Table.Cell textAlign='center'><Input fluid className='input-edit' name='className' placeholder={this.state.className} value={this.state.className} onChange={this.handleChange}/></Table.Cell>}
               </Table.Row>
             </Table.Body>
           </Table>

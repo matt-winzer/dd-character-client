@@ -4,15 +4,15 @@ import { Table } from 'semantic-ui-react'
 import Feature from './Feature'
 
 const Features = (props) => {
-  const abilities = props.abilities.map(ability => {
-    return <Feature key={ability.id}
-                    id={ability.id}
+  const features = props.features.map(feature => {
+    return <Feature key={feature.id}
+                    id={feature.id}
                     baseUrl={props.baseUrl}
                     characterId={props.id}
-                    name={ability.full_name}
-                    value={ability.value}
-                    modifier={ability.modifier}
-                    url={ability.url}
+                    name={feature.name}
+                    level={feature.level}
+                    className={feature.class.name}
+                    url={feature.url}
                     createModalDescription={props.createModalDescription}/>
   })
 
@@ -20,14 +20,14 @@ const Features = (props) => {
     <Table celled selectable unstackable inverted color='green'>
       <Table.Header>
         <Table.Row>
-          <Table.HeaderCell>Ability</Table.HeaderCell>
-          <Table.HeaderCell textAlign='center'>Value</Table.HeaderCell>
-          <Table.HeaderCell textAlign='center'>Modifier</Table.HeaderCell>
+          <Table.HeaderCell>Feature</Table.HeaderCell>
+          <Table.HeaderCell textAlign='center'>Level</Table.HeaderCell>
+          <Table.HeaderCell textAlign='center'>Class</Table.HeaderCell>
         </Table.Row>
       </Table.Header>
 
       <Table.Body>
-        {abilities}
+        {features}
       </Table.Body>
     </Table>
   )
