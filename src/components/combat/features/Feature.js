@@ -95,7 +95,7 @@ class Ability extends Component {
           {this.state.name}
         </Header>
         <Header as='h1' floated='right'>
-          {!editMode ? <Button circular className='editButton' icon='edit' color='grey' content='Edit' onClick={this.toggleEditMode}/> : <Button circular className='editButton' icon='save' color='green' content='Save' loading={savingData ? true : false} onClick={this.saveEdits.bind(null, this.props.id, this.state.characterId)}/>}
+          {!editMode ? <Button disabled circular className='editButton' icon='edit' color='grey' content='Edit' onClick={this.toggleEditMode}/> : <Button circular className='editButton' icon='save' color='green' content='Save' loading={savingData ? true : false} onClick={this.saveEdits.bind(null, this.props.id, this.state.characterId)}/>}
         </Header>
         <Modal.Content>
           <Table className='modal-table' compact={editMode ? true : false} celled striped unstackable color='green'>
