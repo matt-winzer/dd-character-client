@@ -2,14 +2,18 @@ import React from 'react';
 import { Grid } from 'semantic-ui-react'
 
 import Spinner from '../Spinner'
+import Features from './features/Features'
 
-const Inventory = (props) => {
+const Combat = (props) => {
   if (props.character) {
     return (
       <Grid stackable>
         <Grid.Row columns={2}>
           <Grid.Column>
-            <h1>Test</h1>
+            <Features   id={props.character.id}
+                        baseUrl={props.baseUrl}
+                        abilities={props.character.abilities}
+                        createModalDescription={props.createModalDescription}/>
           </Grid.Column>
           <Grid.Column>
             <h1>Test</h1>
@@ -29,4 +33,4 @@ const Inventory = (props) => {
   return <Spinner />
 }
 
-export default Inventory;
+export default Combat;
