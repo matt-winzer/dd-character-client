@@ -5,15 +5,22 @@ import Spinner from '../Spinner'
 import Features from './features/Features'
 import Spells from './spells/Spells'
 import Weapons from '../inventory/weapons/Weapons'
-import BattleStats from './battlestats/BattleStats'
+import CombatStats from './combatstats/CombatStats'
 
 const Combat = (props) => {
   if (props.character) {
     return (
       <Grid stackable>
-        <Grid.Row columns={1}>
+        <Grid.Row columns={2}>
           <Grid.Column>
-            <BattleStats  id={props.character.id}
+            <CombatStats  id={props.character.id}
+                          baseUrl={props.baseUrl}
+                          speed={props.character.speed}
+                          initiative={props.character.initiative}
+                          armorClass={props.character.armor_class}/>
+          </Grid.Column>
+          <Grid.Column>
+            <CombatStats  id={props.character.id}
                           baseUrl={props.baseUrl}
                           hpTotal={props.character.hp_total}
                           hpCurrent={props.character.hp_current}
