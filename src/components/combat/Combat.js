@@ -9,18 +9,18 @@ const Inventory = (props) => {
       <Grid stackable>
         <Grid.Row columns={2}>
           <Grid.Column>
-
+            <h1>Test</h1>
           </Grid.Column>
           <Grid.Column>
-
+            <h1>Test</h1>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row columns={2}>
           <Grid.Column>
-
+            <h1>Test</h1>
           </Grid.Column>
           <Grid.Column>
-
+            <h1>Test</h1>
           </Grid.Column>
         </Grid.Row>
       </Grid>
