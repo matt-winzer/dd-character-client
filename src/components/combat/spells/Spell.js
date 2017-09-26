@@ -115,11 +115,31 @@ class Spell extends Component {
             <Table.Body>
               <Table.Row>
                 <Table.Cell width={5}><strong>Level</strong></Table.Cell>
-                {!editMode ? <Table.Cell >{this.state.level}</Table.Cell> : <Table.Cell textAlign='center'><Input fluid className='input-edit' name='level' placeholder={this.state.level} value={this.state.level} onChange={this.handleChange}/></Table.Cell>}
+                {!editMode ? <Table.Cell>{this.state.level}</Table.Cell> : <Table.Cell textAlign='center'><Input fluid className='input-edit' name='magic_shool' placeholder={this.state.level} value={this.state.level} onChange={this.handleChange}/></Table.Cell>}
               </Table.Row>
               <Table.Row>
-                <Table.Cell width={5}><strong>Class</strong></Table.Cell>
+                <Table.Cell width={5}><strong>Magic School</strong></Table.Cell>
                 {!editMode ? <Table.Cell>{this.state.magicSchool}</Table.Cell> : <Table.Cell textAlign='center'><Input fluid className='input-edit' name='magic_shool' placeholder={this.state.magicSchool} value={this.state.magicSchool} onChange={this.handleChange}/></Table.Cell>}
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell width={5}><strong>Range</strong></Table.Cell>
+                {!editMode ? <Table.Cell >{this.state.range}</Table.Cell> : <Table.Cell textAlign='center'><Input fluid className='input-edit' name='range' placeholder={this.state.range} value={this.state.range} onChange={this.handleChange}/></Table.Cell>}
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell width={5}><strong>Ritual</strong></Table.Cell>
+                {!editMode ? <Table.Cell>{this.state.ritual}</Table.Cell> : <Table.Cell textAlign='center'><Input fluid className='input-edit' name='magic_shool' placeholder={this.state.ritual} value={this.state.ritual} onChange={this.handleChange}/></Table.Cell>}
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell width={5}><strong>Duration</strong></Table.Cell>
+                {!editMode ? <Table.Cell>{this.state.duration}</Table.Cell> : <Table.Cell textAlign='center'><Input fluid className='input-edit' name='magic_shool' placeholder={this.state.duration} value={this.state.duration} onChange={this.handleChange}/></Table.Cell>}
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell width={5}><strong>Concentration</strong></Table.Cell>
+                {!editMode ? <Table.Cell>{this.state.concentration}</Table.Cell> : <Table.Cell textAlign='center'><Input fluid className='input-edit' name='magic_shool' placeholder={this.state.concentration} value={this.state.concentration} onChange={this.handleChange}/></Table.Cell>}
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell width={5}><strong>Casting Time</strong></Table.Cell>
+                {!editMode ? <Table.Cell>{this.state.castingTime}</Table.Cell> : <Table.Cell textAlign='center'><Input fluid className='input-edit' name='magic_shool' placeholder={this.state.castingTime} value={this.state.castingTime} onChange={this.handleChange}/></Table.Cell>}
               </Table.Row>
             </Table.Body>
           </Table>
