@@ -30,7 +30,7 @@ const Combat = (props) => {
           </Grid.Column>
           <Grid.Column>
             <ExtraStats id={props.character.id}
-                        baseUrl={props.baseUrl}
+                        inspiration={props.inspiration}
                         hpTotal={props.character.hp_total}
                         hpCurrent={props.character.hp_current}
                         hpBonus={props.character.hp_bonus}/>
