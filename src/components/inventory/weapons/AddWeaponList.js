@@ -10,19 +10,19 @@ class AddWeaponList extends Component {
       editMode: false,
       savingData: false,
       characterId: props.id,
-      baseUrl: `${props.baseUrl}weapon`
+      weaponUrl: `${props.weaponUrl}`
     }
   }
 
   componentWillMount() {
-    fetch(this.state.baseUrl)
+    fetch(this.state.weaponUrl)
       .then(response => response.json())
       .then(weapons => {
         const newWeapons = weapons.map(weapon => {
           return (
             <AddWeapon  key={weapon.id}
                         id={weapon.id}
-                        baseUrl={this.props.baseUrl}
+                        weaponUrl={this.props.weaponUrl}
                         name={weapon.name}
                         category={weapon.category}
                         description={weapon.description}

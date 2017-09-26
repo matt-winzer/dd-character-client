@@ -14,7 +14,11 @@ class Inventory extends Component {
     super(props)
     this.state = {
       addWeapon: false,
-      baseUrl: `${props.baseUrl}weapon`
+      addArmor: false,
+      addItem: false,
+      weaponUrl: `${props.baseUrl}weapon`,
+      armorUrl: `${props.baseUrl}armor`,
+      itemUrl: `${props.baseUrl}item`
     }
   }
 
@@ -23,6 +27,22 @@ class Inventory extends Component {
     this.setState({
       ...this.state,
       addWeapon: addWeapon
+    })
+  }
+
+  toggleAddArmor = () => {
+    const addArmor = !this.state.addArmor
+    this.setState({
+      ...this.state,
+      addArmor: addArmor
+    })
+  }
+
+  toggleAddItem = () => {
+    const addItem = !this.state.addItem
+    this.setState({
+      ...this.state,
+      addItem: addItem
     })
   }
 
@@ -60,11 +80,12 @@ class Inventory extends Component {
           <Grid.Row>
             <Grid.Column>
               <Button onClick={this.toggleAddWeapon} content='Add Weapon'/>
+              <Button onClick={this.toggleAddArmor} content='Add Armor'/>
+              <Button onClick={this.toggleAddItem} content='Add Item'/>
               {addWeapon &&
                 <AddWeaponList  id={this.props.character.id}
-                            baseUrl={this.props.baseUrl}/>
+                                weaponUrl={this.state.weaponUrl}/>
               }
-
             </Grid.Column>
           </Grid.Row>
         </Grid>
