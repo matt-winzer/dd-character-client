@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Table, Modal, Header, Button, Icon, Input, Label } from 'semantic-ui-react'
+import { Table, Modal, Header, Button, Icon, Input } from 'semantic-ui-react'
 
 class Feature extends Component {
   constructor(props) {
