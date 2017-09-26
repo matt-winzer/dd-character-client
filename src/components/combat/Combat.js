@@ -6,6 +6,7 @@ import Features from './features/Features'
 import Spells from './spells/Spells'
 import Weapons from '../inventory/weapons/Weapons'
 import CombatStats from './combatstats/CombatStats'
+import HealthStats from './combatstats/HealthStats'
 
 const Combat = (props) => {
   if (props.character) {
@@ -20,14 +21,11 @@ const Combat = (props) => {
                           armorClass={props.character.armor_class}/>
           </Grid.Column>
           <Grid.Column>
-            <CombatStats  id={props.character.id}
+            <HealthStats  id={props.character.id}
                           baseUrl={props.baseUrl}
                           hpTotal={props.character.hp_total}
                           hpCurrent={props.character.hp_current}
-                          hpBonus={props.character.hp_bonus}
-                          speed={props.character.speed}
-                          initiative={props.character.initiative}
-                          armorClass={props.character.armor_class}/>
+                          hpBonus={props.character.hp_bonus}/>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row columns={2}>
