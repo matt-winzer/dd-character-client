@@ -19,8 +19,8 @@ class Feature extends Component {
   componentDidMount() {
     fetch(this.props.url)
       .then(response => response.json())
-      .then(ability => {
-        const description = this.props.createModalDescription(ability.desc)
+      .then(feature => {
+        const description = this.props.createModalDescription(feature.desc)
         this.setState({
           description: description
         })

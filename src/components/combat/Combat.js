@@ -5,11 +5,20 @@ import Spinner from '../Spinner'
 import Features from './features/Features'
 import Spells from './spells/Spells'
 import Weapons from '../inventory/weapons/Weapons'
+import BattleStats from './battlestats/BattleStats'
 
 const Combat = (props) => {
   if (props.character) {
     return (
       <Grid stackable>
+        <Grid.Row columns={1}>
+          <Grid.Column>
+            <BattleStats  id={props.character.id}
+                          baseUrl={props.baseUrl}
+                          features={props.character.features}
+                          createModalDescription={props.createModalDescription}/>
+          </Grid.Column>
+        </Grid.Row>
         <Grid.Row columns={2}>
           <Grid.Column>
             <Features   id={props.character.id}
@@ -26,14 +35,7 @@ const Combat = (props) => {
                       weapons={props.character.weapons}/>
           </Grid.Column>
         </Grid.Row>
-        <Grid.Row columns={2}>
-          <Grid.Column>
 
-          </Grid.Column>
-          <Grid.Column>
-            <h1>Test</h1>
-          </Grid.Column>
-        </Grid.Row>
       </Grid>
     )
   }
