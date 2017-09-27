@@ -61,7 +61,7 @@ class Inventory extends Component {
           <Grid.Row className='add-buttons-column'>
             <Grid.Column id='add-buttons-column'>
               <div className='add-buttons-container'>
-                <Button onClick={this.toggleAddWeapon} fluid icon='crosshairs' content='Add Weapon'/>
+                {!addWeapon ? <Button onClick={this.toggleAddWeapon} fluid icon='crosshairs' content='Add Weapon'/> : <Button onClick={this.toggleAddWeapon} fluid color='red' icon='crosshairs' content='Add Weapon'/> }
                 <Button onClick={this.toggleAddArmor} fluid icon='shield' content='Add Armor'/>
                 <Button onClick={this.toggleAddItem} fluid icon='first aid' content='Add Item'/>
               </div>
