@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
 import _ from 'lodash'
+import React, { Component } from 'react'
 import { Table, Modal, Header, Button, Icon, Input, Form, TextArea, Search } from 'semantic-ui-react'
 
 import AddWeapon from './AddWeapon'
@@ -23,6 +23,8 @@ class AddWeaponList extends Component {
           return (
             <AddWeapon  key={weapon.name}
                         id={weapon.id}
+                        characterId={this.props.id}
+                        baseUrl={this.props.baseUrl}
                         weaponUrl={this.props.weaponUrl}
                         name={weapon.name}
                         category={weapon.category}
@@ -104,10 +106,6 @@ class AddWeaponList extends Component {
     })
   }
 
- //  componentWillMount() {
- //   this.resetComponent()
- // }
-
   resetComponent = () => this.setState({
    ...this.state,
    isLoading: false,
@@ -115,7 +113,7 @@ class AddWeaponList extends Component {
    value: ''
   })
 
- // handleResultSelect = (e, { result }) => this.setState({ value: result.key })
+  // handleResultSelect = (e, { result }) => this.setState({ value: result.key })
 
   handleSearchChange = (e, { value }) => {
    this.setState({ isLoading: true, value })

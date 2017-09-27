@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Table, Modal, Header, Button, Icon, Input, Form, TextArea } from 'semantic-ui-react'
+import { Table, Modal, Header, Button, Icon, Input, Form, TextArea, Label } from 'semantic-ui-react'
 
 class AddWeapon extends Component {
   constructor(props) {
@@ -7,6 +7,7 @@ class AddWeapon extends Component {
     this.state = {
       editMode: false,
       savingData: false,
+      itemAdded: false,
       name: props.name,
       description: props.description,
       category: props.category,
@@ -17,7 +18,7 @@ class AddWeapon extends Component {
       damageDiceCount: props.damageDiceCount,
       damageDiceValue: props.damageDiceValue,
       weight: props.weight,
-      baseUrl: `${props.baseUrl}weapon`
+      weaponUrl: `${props.weaponUrl}`
     }
   }
 
@@ -40,25 +41,20 @@ class AddWeapon extends Component {
     })
   }
 
-  saveEdits = (id) => {
-    const editMode = !this.state.editMode
-    const url = `${this.state.baseUrl}/${id}`
+  addWeapon = (id, characterId) => {
+    console.log('weapon ID: ', id);
+    console.log('characrer ID: ', characterId);
+
+    const url = `${this.props.baseUrl}character/${characterId}/weapon`
     const options = {
-      method: 'PUT',
+      method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        name: this.state.name,
-        category: this.state.category,
-        description: this.state.description,
-        cost_value: this.state.costValue,
-        cost_unit: this.state.costUnit,
-        range_normal: this.state.range,
-        damage_dice_count: this.state.damageDiceCount,
-        damage_dice_value: this.state.damageDiceValue,
-        weight: this.state.weight,
+        character_id: characterId,
+        weapon_id: id,
       })
     }
 
@@ -72,8 +68,8 @@ class AddWeapon extends Component {
       .then(response => {
         this.setState({
           ...this.state,
-          editMode: editMode,
-          savingData: false
+          savingData: false,
+          itemAdded: true
         })
       })
       .catch(err => {
@@ -81,9 +77,18 @@ class AddWeapon extends Component {
     })
   }
 
+  resetItemAdded = (e) => {
+    console.log(e);
+    this.setState({
+      ...this.state,
+      itemAdded: false
+    })
+  }
+
   render() {
     const editMode = this.state.editMode
     const savingData = this.state.savingData
+    const itemAdded = this.state.itemAdded
 
     return (
       <Modal  trigger={<Table.Row>
@@ -92,13 +97,14 @@ class AddWeapon extends Component {
                         <Table.Cell textAlign='center'>{this.state.damageDiceCount} D{this.state.damageDiceValue}</Table.Cell>
                       </Table.Row>}
               size='small'
+              onClose={this.resetItemAdded}
               closeIcon>
         <Header as='h1' floated='left'>
           <Icon name='crosshairs'/>
           {this.state.name}
         </Header>
         <Header as='h1' floated='right'>
-          {!editMode ? <Button circular className='editButton' icon='edit' color='grey' content='Edit' onClick={this.toggleEditMode}/> : <Button circular className='editButton' icon='save' color='green' content='Save' loading={savingData ? true: false} onClick={this.saveEdits.bind(null, this.props.id)}/>}
+          {!itemAdded ? <Button circular className='editButton' icon='crosshairs' color='grey' content='Add' loading={savingData ? true: false} onClick={this.addWeapon.bind(null, this.props.id, this.props.characterId)}/> : <Button circular className='editButton' icon='thumbs up' color='red' content='Added' loading={savingData ? true: false}/>}
         </Header>
         <Modal.Content className='scrolling-modal-content' scrolling>
           <Table className='modal-table' compact={editMode ? true : false} celled striped unstackable color='red'>
@@ -126,7 +132,6 @@ class AddWeapon extends Component {
               <Table.Row>
                 <Table.Cell><strong>Damage</strong></Table.Cell>
                 {!editMode ? <Table.Cell>{this.state.damageDiceCount} D{this.state.damageDiceValue}</Table.Cell> : <Table.Cell textAlign='center'><Input fluid label='Dice #' className='input-edit' name='damageDiceCount' placeholder={this.state.damageDiceCount} value={this.state.damageDiceCount} onChange={this.handleChange}/><Input fluid label='D' className='input-edit' name='damageDiceValue' placeholder={this.state.damageDiceValue} value={this.state.damageDiceValue} onChange={this.handleChange}/></Table.Cell>}
-
               </Table.Row>
               <Table.Row>
                 <Table.Cell><strong>Range</strong></Table.Cell>
