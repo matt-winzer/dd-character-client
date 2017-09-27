@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Table, Modal, Header, Button, Icon, Input, Form, TextArea } from 'semantic-ui-react'
+import _ from 'lodash'
+import { Table, Modal, Header, Button, Icon, Input, Form, TextArea, Search } from 'semantic-ui-react'
 
 import AddWeapon from './AddWeapon'
 
@@ -20,7 +21,7 @@ class AddWeaponList extends Component {
       .then(weapons => {
         const newWeapons = weapons.map(weapon => {
           return (
-            <AddWeapon  key={weapon.id}
+            <AddWeapon  key={weapon.name}
                         id={weapon.id}
                         weaponUrl={this.props.weaponUrl}
                         name={weapon.name}
@@ -37,7 +38,8 @@ class AddWeaponList extends Component {
         })
         this.setState({
           ...this.state,
-          weapons: newWeapons
+          weapons: newWeapons,
+          results: newWeapons
         })
       })
   }
@@ -102,24 +104,59 @@ class AddWeaponList extends Component {
     })
   }
 
+ //  componentWillMount() {
+ //   this.resetComponent()
+ // }
+
+  resetComponent = () => this.setState({
+   ...this.state,
+   isLoading: false,
+   results: this.state.weapons,
+   value: ''
+  })
+
+ // handleResultSelect = (e, { result }) => this.setState({ value: result.key })
+
+  handleSearchChange = (e, { value }) => {
+   this.setState({ isLoading: true, value })
+
+   setTimeout(() => {
+     if (this.state.value.length < 1) return this.resetComponent()
+
+     const re = new RegExp(_.escapeRegExp(this.state.value), 'i')
+     const isMatch = result => re.test(result.key)
+     const weapons = this.state.weapons
+
+     this.setState({
+       isLoading: false,
+       results: _.filter(weapons, isMatch),
+     })
+   }, 500)
+  }
+
   render() {
-    const editMode = this.state.editMode
-    const savingData = this.state.savingData
-    const weapons = this.state.weapons
+    const { isLoading, value, results, editMode, savingData, weapons } = this.state
 
     return (
-      <Table className='modal-table' compact={editMode ? true : false} celled selectable unstackable color='red'>
-          <Table.Header className='modal-table-header' fullWidth>
-            <Table.Row>
-              <Table.HeaderCell>Weapon</Table.HeaderCell>
-              <Table.HeaderCell textAlign='center'>Range</Table.HeaderCell>
-              <Table.HeaderCell textAlign='center'>Damage</Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-        <Table.Body>
-          {weapons}
-        </Table.Body>
-      </Table>
+      <div>
+        <Input  placeholder='Search by Name'
+                loading={isLoading}
+                onChange={this.handleSearchChange}
+                icon='search'
+                className='search-input'/>
+        <Table className='modal-table' compact={editMode ? true : false} celled selectable unstackable color='red'>
+            <Table.Header className='modal-table-header' fullWidth>
+              <Table.Row>
+                <Table.HeaderCell>Weapon</Table.HeaderCell>
+                <Table.HeaderCell textAlign='center'>Range</Table.HeaderCell>
+                <Table.HeaderCell textAlign='center'>Damage</Table.HeaderCell>
+              </Table.Row>
+            </Table.Header>
+          <Table.Body>
+            {results}
+          </Table.Body>
+        </Table>
+      </div>
 
     )
   }

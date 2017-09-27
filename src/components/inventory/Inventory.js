@@ -58,6 +58,19 @@ class Inventory extends Component {
     if (this.props.character) {
       return (
         <Grid stackable>
+          <Grid.Row className='add-buttons-column'>
+            <Grid.Column id='add-buttons-column'>
+              <div className='add-buttons-container'>
+                <Button onClick={this.toggleAddWeapon} fluid icon='crosshairs' content='Add Weapon'/>
+                <Button onClick={this.toggleAddArmor} fluid icon='shield' content='Add Armor'/>
+                <Button onClick={this.toggleAddItem} fluid icon='first aid' content='Add Item'/>
+              </div>
+              {addWeapon &&
+                <AddWeaponList  id={this.props.character.id}
+                weaponUrl={this.state.weaponUrl}/>
+              }
+            </Grid.Column>
+          </Grid.Row>
           <Grid.Row columns={2}>
             <Grid.Column>
               <Weapons  baseUrl={this.props.baseUrl}
@@ -81,17 +94,6 @@ class Inventory extends Component {
                         gold={this.props.character.gold}
                         electrum={this.props.character.electrum}
                         platinum={this.props.character.platinum}/>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column>
-              <Button onClick={this.toggleAddWeapon} icon='crosshairs' content='Add Weapon'/>
-              <Button onClick={this.toggleAddArmor} icon='shield' content='Add Armor'/>
-              <Button onClick={this.toggleAddItem} icon='first aid' content='Add Item'/>
-              {addWeapon &&
-                <AddWeaponList  id={this.props.character.id}
-                                weaponUrl={this.state.weaponUrl}/>
-              }
             </Grid.Column>
           </Grid.Row>
         </Grid>

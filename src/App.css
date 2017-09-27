@@ -72,6 +72,22 @@ div.scrolling-modal-content.scrolling.content {
   padding-top: 0 !important;
 }
 
+div.row.add-buttons-column {
+  padding-bottom: 0 !important;
+}
+
+#add-buttons-column {
+  padding-bottom: 0 !important;
+}
+
+.search-input {
+  margin-top: 1em;
+}
+
+.add-buttons-container {
+  display: flex;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
