@@ -67,7 +67,7 @@ class Inventory extends Component {
               </div>
               {addWeapon &&
                 <AddWeaponList  id={this.props.character.id}
-                weaponUrl={this.state.weaponUrl}/>
+                                weaponUrl={this.state.weaponUrl}/>
               }
             </Grid.Column>
           </Grid.Row>

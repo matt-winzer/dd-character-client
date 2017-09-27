@@ -143,7 +143,7 @@ class AddWeaponList extends Component {
                 loading={isLoading}
                 onChange={this.handleSearchChange}
                 icon='search'
-                className='search-input'/>
+                className='search-input input-edit'/>
         <Table className='modal-table' compact={editMode ? true : false} celled selectable unstackable color='red'>
             <Table.Header className='modal-table-header' fullWidth>
               <Table.Row>
