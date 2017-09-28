@@ -101,7 +101,7 @@ class Weapon extends Component {
           {!editMode ?
             <Button circular className='editButton' icon='edit' color='grey' content='Edit' onClick={this.toggleEditMode}/> :
             <div>
-              <Button circular className='editButton' icon='save' color='red' content='Remove' loading={savingData ? true: false} onClick={this.props.removeFromInventory.bind(null, this.props.id, 'weapons')}/>
+              <Button circular className='editButton' icon='save' color='red' content='Remove' loading={savingData ? true: false} onClick={this.props.removeFromInventory.bind(null, this.props.id, 'weapons', )}/>
               <Button circular className='editButton' icon='save' color='green' content='Save' loading={savingData ? true: false} onClick={this.saveEdits.bind(null, this.props.id)}/>
             </div>}
         </Header>

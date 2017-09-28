@@ -28,14 +28,39 @@ class CharacterTabs extends Component {
 
   removeFromInventory = (itemId, itemName) => {
     let newCharacter = this.state.character
+    const characterId = this.props.characterId
     const newItems = this.state.character[itemName].filter(item => {
       return item.id !== itemId
     })
     newCharacter[itemName] = newItems
+    const url = `${this.props.baseUrl}character/${characterId}/weapon/${itemId}`
+    const options = {
+      method: 'DELETE',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    }
+
     this.setState({
       ...this.state,
-      character: newCharacter
+      savingData: true
     })
+
+    fetch(url, options)
+      .then(response => response.json())
+      .then(response => {
+        this.setState({
+          ...this.state,
+          savingData: false,
+          itemAdded: true,
+          character: newCharacter
+        })
+      })
+      .catch(err => {
+      console.log(err)
+    })
+
   }
 
   render() {
