@@ -55,6 +55,7 @@ class Inventory extends Component {
 
   render() {
     const addWeapon = this.state.addWeapon
+    console.log(this.props);
 
     if (this.props.character) {
       return (
@@ -69,7 +70,9 @@ class Inventory extends Component {
               {addWeapon &&
                 <AddWeaponList  id={this.props.character.id}
                                 baseUrl={this.props.baseUrl}
-                                weaponUrl={this.state.weaponUrl}/>
+                                weaponUrl={this.state.weaponUrl}
+                                addToInventory={this.props.addToInventory}
+                                />
               }
             </Grid.Column>
           </Grid.Row>
@@ -77,7 +80,8 @@ class Inventory extends Component {
             <Grid.Column>
               <Weapons  baseUrl={this.props.baseUrl}
                         weapons={this.props.character.weapons}
-                        removeFromInventory={this.props.removeFromInventory}/>
+                        removeFromInventory={this.props.removeFromInventory}
+                        addToInventory={this.props.addToInventory}/>
             </Grid.Column>
             <Grid.Column>
               <Armors baseUrl={this.props.baseUrl}

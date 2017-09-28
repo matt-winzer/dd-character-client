@@ -12,7 +12,9 @@ class CharacterTabs extends Component {
     super(props)
     this.state = {
       character: null,
-      characterId: props.characterId
+      characterId: props.characterId,
+      editMode: false,
+      savingData: false
     }
   }
 
@@ -26,9 +28,49 @@ class CharacterTabs extends Component {
     })
   }
 
-  removeFromInventory = (itemId, itemName) => {
-    let newCharacter = this.state.character
+  addToInventory = (itemId, itemName) => {
     const characterId = this.props.characterId
+    const itemPath = itemName.slice(0, -1)
+    const url = `${this.props.baseUrl}character/${characterId}/${itemPath}`
+
+    console.log(itemPath);
+    //
+    // const options = {
+    //   method: 'POST',
+    //   headers: {
+    //     'Accept': 'application/json',
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify({
+    //     character_id: characterId,
+    //     weapon_id: itemId,
+    //   })
+    // }
+    //
+    // this.setState({
+    //   ...this.state,
+    //   savingData: true
+    // })
+    //
+    // fetch(url, options)
+    //   .then(response => response.json())
+    //   .then(response => {
+    //     this.setState({
+    //       ...this.state,
+    //       savingData: false,
+    //       itemAdded: true
+    //     })
+    //   })
+    //   .catch(err => {
+    //   console.log(err)
+    // })
+  }
+
+  removeFromInventory = (itemId, itemName) => {
+    const characterId = this.props.characterId
+    let newCharacter = this.state.character
+    const itemPath = itemName.slice(-1)
+    console.log(itemPath)
     const newItems = this.state.character[itemName].filter(item => {
       return item.id !== itemId
     })
@@ -65,9 +107,17 @@ class CharacterTabs extends Component {
 
   render() {
     const panes = [
-      { menuItem: 'Character', render: () => <Tab.Pane><Character character={this.state.character} baseUrl={this.props.baseUrl} createModalDescription={this.props.createModalDescription}/></Tab.Pane>},
-      { menuItem: 'Inventory', render: () => <Tab.Pane><Inventory character={this.state.character} baseUrl={this.props.baseUrl} removeFromInventory={this.removeFromInventory}/></Tab.Pane> },
-      { menuItem: 'Combat', render: () => <Tab.Pane><Combat character={this.state.character} baseUrl={this.props.baseUrl} createModalDescription={this.props.createModalDescription}/></Tab.Pane> },
+      { menuItem: 'Character', render: () => <Tab.Pane><Character character={this.state.character}
+                                                                  baseUrl={this.props.baseUrl}
+                                                                  createModalDescription={this.props.createModalDescription}/></Tab.Pane>},
+      { menuItem: 'Inventory', render: () => <Tab.Pane><Inventory character={this.state.character}
+                                                                  baseUrl={this.props.baseUrl}
+                                                                  removeFromInventory={this.removeFromInventory}
+                                                                  addToInventory={this.addToInventory}/>
+                                                                  </Tab.Pane> },
+      { menuItem: 'Combat', render: () => <Tab.Pane><Combat character={this.state.character}
+                                                            baseUrl={this.props.baseUrl}
+                                                            createModalDescription={this.props.createModalDescription}/></Tab.Pane> },
     ]
 
     if (this.state.character) {

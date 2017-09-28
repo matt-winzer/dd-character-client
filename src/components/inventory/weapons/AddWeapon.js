@@ -104,7 +104,7 @@ class AddWeapon extends Component {
           {this.state.name}
         </Header>
         <Header as='h1' floated='right'>
-          {!itemAdded ? <Button circular className='editButton' icon='crosshairs' color='grey' content='Add' loading={savingData ? true: false} onClick={this.addWeapon.bind(null, this.props.id, this.props.characterId)}/> : <Button circular className='editButton' icon='thumbs up' color='red' content='Added' loading={savingData ? true: false}/>}
+          {!itemAdded ? <Button circular className='editButton' icon='crosshairs' color='grey' content='Add' loading={savingData ? true: false} onClick={this.props.addToInventory.bind(null, this.props.id, 'weapons')}/> : <Button circular className='editButton' icon='thumbs up' color='red' content='Added' loading={savingData ? true: false}/>}
         </Header>
         <Modal.Content className='scrolling-modal-content' scrolling>
           <Table className='modal-table' compact={editMode ? true : false} celled striped unstackable color='red'>

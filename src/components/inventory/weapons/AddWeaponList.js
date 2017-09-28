@@ -26,6 +26,7 @@ class AddWeaponList extends Component {
                         characterId={this.props.id}
                         baseUrl={this.props.baseUrl}
                         weaponUrl={this.props.weaponUrl}
+                        addToInventory={this.props.addToInventory}
                         name={weapon.name}
                         category={weapon.category}
                         description={weapon.description}
@@ -35,7 +36,9 @@ class AddWeaponList extends Component {
                         damageType={weapon.damage_type.name}
                         weight={weapon.weight}
                         costUnit={weapon.cost_unit}
-                        costValue={weapon.cost_value}/>
+                        costValue={weapon.cost_value}
+
+                        />
           )
         })
         this.setState({

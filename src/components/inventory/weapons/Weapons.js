@@ -18,7 +18,8 @@ const Weapons = (props) => {
                     weight={weapon.weight}
                     costUnit={weapon.cost_unit}
                     costValue={weapon.cost_value}
-                    removeFromInventory={props.removeFromInventory}/>
+                    removeFromInventory={props.removeFromInventory}
+                    />
   })
 
   return (
