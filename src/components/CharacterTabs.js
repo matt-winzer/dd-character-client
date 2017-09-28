@@ -10,23 +10,48 @@ import Combat from './combat/Combat'
 class CharacterTabs extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      character: null,
+      characterId: props.characterId
+    }
   }
 
+  async componentWillMount() {
+    const url = `${this.props.baseUrl}character/${this.state.characterId}`
+    const response = await fetch(url)
+    const json = await response.json()
+    this.setState({
+      ...this.state,
+      character: json[0]
+    })
+  }
+
+  removeFromInventory = (itemId, itemName) => {
+    let newCharacter = this.state.character
+    const newItems = this.state.character[itemName].filter(item => {
+      return item.id !== itemId
+    })
+    newCharacter[itemName] = newItems
+    this.setState({
+      ...this.state,
+      character: newCharacter
+    })
+  }
 
   render() {
     const panes = [
-      { menuItem: 'Character', render: () => <Tab.Pane><Character character={this.props.character} baseUrl={this.props.baseUrl} createModalDescription={this.props.createModalDescription}/></Tab.Pane>},
-      { menuItem: 'Inventory', render: () => <Tab.Pane><Inventory character={this.props.character} baseUrl={this.props.baseUrl} removeFromInventory={this.props.removeFromInventory}/></Tab.Pane> },
-      { menuItem: 'Combat', render: () => <Tab.Pane><Combat character={this.props.character} baseUrl={this.props.baseUrl} createModalDescription={this.props.createModalDescription}/></Tab.Pane> },
+      { menuItem: 'Character', render: () => <Tab.Pane><Character character={this.state.character} baseUrl={this.props.baseUrl} createModalDescription={this.props.createModalDescription}/></Tab.Pane>},
+      { menuItem: 'Inventory', render: () => <Tab.Pane><Inventory character={this.state.character} baseUrl={this.props.baseUrl} removeFromInventory={this.removeFromInventory}/></Tab.Pane> },
+      { menuItem: 'Combat', render: () => <Tab.Pane><Combat character={this.state.character} baseUrl={this.props.baseUrl} createModalDescription={this.props.createModalDescription}/></Tab.Pane> },
     ]
 
-    if (this.props.character) {
+    if (this.state.character) {
       return (
         <Container className='main-content'>
-          <CharacterHeader  name={this.props.character.name}
-                            level={this.props.character.level}
-                            _class={this.props.character.class.name}
-                            race={this.props.character.race}/>
+          <CharacterHeader  name={this.state.character.name}
+                            level={this.state.character.level}
+                            _class={this.state.character.class.name}
+                            race={this.state.character.race}/>
           <Tab panes={panes} defaultActiveIndex={1}/>
         </Container>
       )
