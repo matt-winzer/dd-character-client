@@ -76,7 +76,8 @@ class Inventory extends Component {
           <Grid.Row columns={2}>
             <Grid.Column>
               <Weapons  baseUrl={this.props.baseUrl}
-                        weapons={this.props.character.weapons}/>
+                        weapons={this.props.character.weapons}
+                        removeFromInventory={this.props.removeFromInventory}/>
             </Grid.Column>
             <Grid.Column>
               <Armors baseUrl={this.props.baseUrl}

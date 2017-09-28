@@ -26,12 +26,31 @@ class App extends Component {
     })
   }
 
+  removeFromInventory = (itemId, itemName) => {
+    const newItems = this.state.characters[0][itemName].filter(item => {
+      return item.id !== itemId
+    })
+    let newCharacter = this.state.characters[0]
+    newCharacter[itemName] = newItems
+    console.log(newItems)
+    console.log('itemId ', itemId);
+    console.log('itemName ', itemName);
+    console.log(newCharacter);
+    // this.setState({
+    //   ...this.state,
+    //   characters: newCharacter
+    // })
+  }
+
   render() {
     if (this.state.characters) {
       return (
         <div>
           <Navbar />
-          <CharacterTabs character={this.state.characters[0]} baseUrl={this.state.baseUrl} createModalDescription={this.createModalDescription}/>
+          <CharacterTabs  character={this.state.characters[0]}
+                          baseUrl={this.state.baseUrl}
+                          createModalDescription={this.createModalDescription}
+                          removeFromInventory={this.removeFromInventory}/>
         </div>
       )
     }

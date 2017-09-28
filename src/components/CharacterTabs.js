@@ -10,7 +10,7 @@ import Combat from './combat/Combat'
 const CharacterTabs = (props) => {
   const panes = [
     { menuItem: 'Character', render: () => <Tab.Pane><Character character={props.character} baseUrl={props.baseUrl} createModalDescription={props.createModalDescription}/></Tab.Pane>},
-    { menuItem: 'Inventory', render: () => <Tab.Pane><Inventory character={props.character} baseUrl={props.baseUrl}/></Tab.Pane> },
+    { menuItem: 'Inventory', render: () => <Tab.Pane><Inventory character={props.character} baseUrl={props.baseUrl} removeFromInventory={props.removeFromInventory}/></Tab.Pane> },
     { menuItem: 'Combat', render: () => <Tab.Pane><Combat character={props.character} baseUrl={props.baseUrl} createModalDescription={props.createModalDescription}/></Tab.Pane> },
   ]
 

@@ -17,7 +17,8 @@ const Weapons = (props) => {
                     damageType={weapon.damage_type.name}
                     weight={weapon.weight}
                     costUnit={weapon.cost_unit}
-                    costValue={weapon.cost_value}/>
+                    costValue={weapon.cost_value}
+                    removeFromInventory={props.removeFromInventory}/>
   })
 
   return (
