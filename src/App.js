@@ -36,10 +36,10 @@ class App extends Component {
     console.log('itemId ', itemId);
     console.log('itemName ', itemName);
     console.log(newCharacter);
-    // this.setState({
-    //   ...this.state,
-    //   characters: newCharacter
-    // })
+    this.setState({
+      ...this.state,
+      characters: [newCharacter]
+    })
   }
 
   render() {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Container, Tab } from 'semantic-ui-react'
 
 import Spinner from './Spinner'
@@ -7,25 +7,35 @@ import Inventory from './inventory/Inventory'
 import Character from './character/Character'
 import Combat from './combat/Combat'
 
-const CharacterTabs = (props) => {
-  const panes = [
-    { menuItem: 'Character', render: () => <Tab.Pane><Character character={props.character} baseUrl={props.baseUrl} createModalDescription={props.createModalDescription}/></Tab.Pane>},
-    { menuItem: 'Inventory', render: () => <Tab.Pane><Inventory character={props.character} baseUrl={props.baseUrl} removeFromInventory={props.removeFromInventory}/></Tab.Pane> },
-    { menuItem: 'Combat', render: () => <Tab.Pane><Combat character={props.character} baseUrl={props.baseUrl} createModalDescription={props.createModalDescription}/></Tab.Pane> },
-  ]
-
-  if (props.character) {
-    return (
-      <Container className='main-content'>
-        <CharacterHeader  name={props.character.name}
-                          level={props.character.level}
-                          _class={props.character.class.name}
-                          race={props.character.race}/>
-        <Tab panes={panes} defaultActiveIndex={1}/>
-      </Container>
-    )
+class CharacterTabs extends Component {
+  constructor(props) {
+    super(props)
   }
-  return <Spinner />
+
+
+  render() {
+    const panes = [
+      { menuItem: 'Character', render: () => <Tab.Pane><Character character={this.props.character} baseUrl={this.props.baseUrl} createModalDescription={this.props.createModalDescription}/></Tab.Pane>},
+      { menuItem: 'Inventory', render: () => <Tab.Pane><Inventory character={this.props.character} baseUrl={this.props.baseUrl} removeFromInventory={this.props.removeFromInventory}/></Tab.Pane> },
+      { menuItem: 'Combat', render: () => <Tab.Pane><Combat character={this.props.character} baseUrl={this.props.baseUrl} createModalDescription={this.props.createModalDescription}/></Tab.Pane> },
+    ]
+
+    if (this.props.character) {
+      return (
+        <Container className='main-content'>
+          <CharacterHeader  name={this.props.character.name}
+                            level={this.props.character.level}
+                            _class={this.props.character.class.name}
+                            race={this.props.character.race}/>
+          <Tab panes={panes} defaultActiveIndex={1}/>
+        </Container>
+      )
+    }
+
+    return <Spinner />
+  }
+
+
 }
 
 export default CharacterTabs
