@@ -9,7 +9,7 @@ const herokuUrl = 'https://drageons.herokuapp.com/'
 const localUrl = 'http://localhost:3000/'
 
 class App extends Component {
-  state = {characters: null, baseUrl: localUrl}
+  state = {characters: null, baseUrl: herokuUrl}
 
   async componentWillMount() {
     const url = `${this.state.baseUrl}character`
